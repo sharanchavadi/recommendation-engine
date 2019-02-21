@@ -1,0 +1,2799 @@
+Started GET "/" for 127.0.0.1 at 2019-02-21 14:30:07 +0530
+  
+ActiveRecord::PendingMigrationError (
+
+Migrations are pending. To resolve this issue, run:
+
+        bin/rails db:migrate RAILS_ENV=development
+
+):
+  
+activerecord (5.2.2) lib/active_record/migration.rb:579:in `check_pending!'
+activerecord (5.2.2) lib/active_record/migration.rb:556:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+activesupport (5.2.2) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (5.2.2) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/debug_exceptions.rb:61:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.2) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.2) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.2) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.6) lib/rack/method_override.rb:22:in `call'
+rack (2.0.6) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.6) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.2) lib/rails/engine.rb:524:in `call'
+puma (3.12.0) lib/puma/configuration.rb:225:in `call'
+puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
+puma (3.12.0) lib/puma/server.rb:472:in `process_client'
+puma (3.12.0) lib/puma/server.rb:332:in `block in run'
+puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ /Users/apple/.rbenv/versions/2.6.1/bin/rake:23
+  [1m[35m (3.8ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  ↳ /Users/apple/.rbenv/versions/2.6.1/bin/rake:23
+  [1m[35m (1.1ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ /Users/apple/.rbenv/versions/2.6.1/bin/rake:23
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/apple/.rbenv/versions/2.6.1/bin/rake:23
+Migrating to CreateUsers (20190221073440)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /Users/apple/.rbenv/versions/2.6.1/bin/rake:23
+  [1m[35m (0.6ms)[0m  [1m[35mCREATE TABLE "users" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar)[0m
+  ↳ db/migrate/20190221073440_create_users.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20190221073440"]]
+  ↳ /Users/apple/.rbenv/versions/2.6.1/bin/rake:23
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /Users/apple/.rbenv/versions/2.6.1/bin/rake:23
+Migrating to CreateMovies (20190221073936)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /Users/apple/.rbenv/versions/2.6.1/bin/rake:23
+  [1m[35m (0.5ms)[0m  [1m[35mCREATE TABLE "movies" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar)[0m
+  ↳ db/migrate/20190221073936_create_movies.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20190221073936"]]
+  ↳ /Users/apple/.rbenv/versions/2.6.1/bin/rake:23
+  [1m[35m (1.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /Users/apple/.rbenv/versions/2.6.1/bin/rake:23
+Migrating to CreateLikedMovies (20190221074019)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /Users/apple/.rbenv/versions/2.6.1/bin/rake:23
+  [1m[35m (0.5ms)[0m  [1m[35mCREATE TABLE "liked_movies" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "user_id" integer, "movie_id" integer)[0m
+  ↳ db/migrate/20190221074019_create_liked_movies.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20190221074019"]]
+  ↳ /Users/apple/.rbenv/versions/2.6.1/bin/rake:23
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /Users/apple/.rbenv/versions/2.6.1/bin/rake:23
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ /Users/apple/.rbenv/versions/2.6.1/bin/rake:23
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /Users/apple/.rbenv/versions/2.6.1/bin/rake:23
+  [1m[36mActiveRecord::InternalMetadata Create (0.4ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", "2019-02-21 09:02:05.380168"], ["updated_at", "2019-02-21 09:02:05.380168"]]
+  ↳ /Users/apple/.rbenv/versions/2.6.1/bin/rake:23
+  [1m[35m (36.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /Users/apple/.rbenv/versions/2.6.1/bin/rake:23
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/apple/.rbenv/versions/2.6.1/bin/rake:23
+Started GET "/" for 127.0.0.1 at 2019-02-21 14:32:22 +0530
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/apple/.rbenv/versions/2.6.1/lib/ruby/gems/2.6.0/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /Users/apple/.rbenv/versions/2.6.1/lib/ruby/gems/2.6.0/gems/railties-5.2.2/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /Users/apple/.rbenv/versions/2.6.1/lib/ruby/gems/2.6.0/gems/railties-5.2.2/lib/rails/templates/rails/welcome/index.html.erb (3.6ms)
+Completed 200 OK in 18ms (Views: 8.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users" for 127.0.0.1 at 2019-02-21 14:32:41 +0530
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  Rendered users/index.html.erb within layouts/application (4.4ms)
+Completed 500 Internal Server Error in 11ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (undefined method `each' for nil:NilClass):
+    1: <ul><h2>Select a user:</h2>
+    2:   <% @users.each do |user| %>
+    3:     <li><%= link_to user.name, user %></li>
+    4:   <% end %>
+    5: </ul>
+  
+app/views/users/index.html.erb:2:in `_app_views_users_index_html_erb__1056825180632729580_70150271116280'
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/apple/.rbenv/versions/2.6.1/bin/rake:23
+Started GET "/users" for 127.0.0.1 at 2019-02-21 14:39:03 +0530
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/apple/.rbenv/versions/2.6.1/lib/ruby/gems/2.6.0/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  Rendered users/index.html.erb within layouts/application (4.6ms)
+Completed 500 Internal Server Error in 20ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (undefined method `each' for nil:NilClass):
+    1: <ul><h2>Select a user:</h2>
+    2:   <% @users.each do |user| %>
+    3:     <li><%= link_to user.name, user %></li>
+    4:   <% end %>
+    5: </ul>
+  
+app/views/users/index.html.erb:2:in `_app_views_users_index_html_erb___1865942032369875070_70340039877260'
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/apple/.rbenv/versions/2.6.1/bin/rake:23
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/apple/.rbenv/versions/2.6.1/bin/rake:23
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/apple/.rbenv/versions/2.6.1/bin/rake:23
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/apple/.rbenv/versions/2.6.1/bin/rake:23
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/apple/.rbenv/versions/2.6.1/bin/rake:23
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ db/seeds.rb:2
+  [1m[36mMovie Load (0.6ms)[0m  [1m[34mSELECT "movies".* FROM "movies"[0m
+  ↳ db/seeds.rb:3
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:5
+  [1m[36mUser Create (0.9ms)[0m  [1m[32mINSERT INTO "users" ("name") VALUES (?)[0m  [["name", "Yolando Watsica"]]
+  ↳ db/seeds.rb:5
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:5
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:5
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("name") VALUES (?)[0m  [["name", "Mr. Patrick Dooley"]]
+  ↳ db/seeds.rb:5
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:5
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:5
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO "users" ("name") VALUES (?)[0m  [["name", "Lizeth Farrell"]]
+  ↳ db/seeds.rb:5
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:5
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:5
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("name") VALUES (?)[0m  [["name", "Mrs. Karren Kertzmann"]]
+  ↳ db/seeds.rb:5
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:5
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:5
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO "users" ("name") VALUES (?)[0m  [["name", "Dr. Haydee Ward"]]
+  ↳ db/seeds.rb:5
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:5
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:5
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO "users" ("name") VALUES (?)[0m  [["name", "Darnell Thiel"]]
+  ↳ db/seeds.rb:5
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:5
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:5
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("name") VALUES (?)[0m  [["name", "China Stokes"]]
+  ↳ db/seeds.rb:5
+  [1m[35m (11.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:5
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:5
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("name") VALUES (?)[0m  [["name", "Dedra Schultz"]]
+  ↳ db/seeds.rb:5
+  [1m[35m (1.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:5
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:5
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("name") VALUES (?)[0m  [["name", "Juliane Bogan"]]
+  ↳ db/seeds.rb:5
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:5
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:5
+  [1m[36mUser Create (0.5ms)[0m  [1m[32mINSERT INTO "users" ("name") VALUES (?)[0m  [["name", "Karina Gerlach"]]
+  ↳ db/seeds.rb:5
+  [1m[35m (2.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:5
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:5
+  [1m[36mUser Create (1.1ms)[0m  [1m[32mINSERT INTO "users" ("name") VALUES (?)[0m  [["name", "Margit Ward II"]]
+  ↳ db/seeds.rb:5
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:5
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:5
+  [1m[36mUser Create (0.5ms)[0m  [1m[32mINSERT INTO "users" ("name") VALUES (?)[0m  [["name", "Stella Conroy"]]
+  ↳ db/seeds.rb:5
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:5
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:5
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("name") VALUES (?)[0m  [["name", "Lenore Bashirian"]]
+  ↳ db/seeds.rb:5
+  [1m[35m (7.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:5
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:5
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("name") VALUES (?)[0m  [["name", "Denisse Kirlin Jr."]]
+  ↳ db/seeds.rb:5
+  [1m[35m (1.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:5
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:5
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("name") VALUES (?)[0m  [["name", "Stewart Bayer"]]
+  ↳ db/seeds.rb:5
+  [1m[35m (4.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:5
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:5
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("name") VALUES (?)[0m  [["name", "Gustavo Koss"]]
+  ↳ db/seeds.rb:5
+  [1m[35m (5.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:5
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:5
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("name") VALUES (?)[0m  [["name", "Johnnie Rowe"]]
+  ↳ db/seeds.rb:5
+  [1m[35m (4.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:5
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:5
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("name") VALUES (?)[0m  [["name", "Sterling Bergnaum"]]
+  ↳ db/seeds.rb:5
+  [1m[35m (2.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:5
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:5
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("name") VALUES (?)[0m  [["name", "Leland Cummerata"]]
+  ↳ db/seeds.rb:5
+  [1m[35m (1.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:5
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:5
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("name") VALUES (?)[0m  [["name", "Rolf Hettinger"]]
+  ↳ db/seeds.rb:5
+  [1m[35m (5.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:5
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:5
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("name") VALUES (?)[0m  [["name", "Dr. Manie Ankunding"]]
+  ↳ db/seeds.rb:5
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:5
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:5
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("name") VALUES (?)[0m  [["name", "Kyle Spencer"]]
+  ↳ db/seeds.rb:5
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:5
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:5
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("name") VALUES (?)[0m  [["name", "Zora Reichert I"]]
+  ↳ db/seeds.rb:5
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:5
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:5
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("name") VALUES (?)[0m  [["name", "Moises Crona"]]
+  ↳ db/seeds.rb:5
+  [1m[35m (17.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:5
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:5
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("name") VALUES (?)[0m  [["name", "Lenard Franecki IV"]]
+  ↳ db/seeds.rb:5
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:5
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:5
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("name") VALUES (?)[0m  [["name", "Rene Huels"]]
+  ↳ db/seeds.rb:5
+  [1m[35m (1.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:5
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:5
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("name") VALUES (?)[0m  [["name", "Dr. Fletcher Trantow"]]
+  ↳ db/seeds.rb:5
+  [1m[35m (5.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:5
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:5
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("name") VALUES (?)[0m  [["name", "Ezekiel Hamill MD"]]
+  ↳ db/seeds.rb:5
+  [1m[35m (1.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:5
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:5
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("name") VALUES (?)[0m  [["name", "Dalton Streich"]]
+  ↳ db/seeds.rb:5
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:5
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:5
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("name") VALUES (?)[0m  [["name", "Korey Leuschke"]]
+  ↳ db/seeds.rb:5
+  [1m[35m (3.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:5
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:11
+  [1m[36mMovie Create (0.4ms)[0m  [1m[32mINSERT INTO "movies" ("name") VALUES (?)[0m  [["name", "Avengers: Infinity War"]]
+  ↳ db/seeds.rb:11
+  [1m[35m (3.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:11
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:11
+  [1m[36mMovie Create (0.3ms)[0m  [1m[32mINSERT INTO "movies" ("name") VALUES (?)[0m  [["name", "Star Wars: The Force Awakens"]]
+  ↳ db/seeds.rb:11
+  [1m[35m (2.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:11
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:11
+  [1m[36mMovie Create (0.3ms)[0m  [1m[32mINSERT INTO "movies" ("name") VALUES (?)[0m  [["name", "Avatar"]]
+  ↳ db/seeds.rb:11
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:11
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:11
+  [1m[36mMovie Create (0.4ms)[0m  [1m[32mINSERT INTO "movies" ("name") VALUES (?)[0m  [["name", "Titanic"]]
+  ↳ db/seeds.rb:11
+  [1m[35m (3.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:11
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:11
+  [1m[36mMovie Create (0.3ms)[0m  [1m[32mINSERT INTO "movies" ("name") VALUES (?)[0m  [["name", "Jurassic World"]]
+  ↳ db/seeds.rb:11
+  [1m[35m (5.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:11
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:11
+  [1m[36mMovie Create (0.3ms)[0m  [1m[32mINSERT INTO "movies" ("name") VALUES (?)[0m  [["name", "Black Panther"]]
+  ↳ db/seeds.rb:11
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:11
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:11
+  [1m[36mMovie Create (0.4ms)[0m  [1m[32mINSERT INTO "movies" ("name") VALUES (?)[0m  [["name", "Marvel’s The Avengers"]]
+  ↳ db/seeds.rb:11
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:11
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:11
+  [1m[36mMovie Create (0.4ms)[0m  [1m[32mINSERT INTO "movies" ("name") VALUES (?)[0m  [["name", "Star Wars: The Last Jedi"]]
+  ↳ db/seeds.rb:11
+  [1m[35m (1.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:11
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:11
+  [1m[36mMovie Create (0.3ms)[0m  [1m[32mINSERT INTO "movies" ("name") VALUES (?)[0m  [["name", "The Dark Knight"]]
+  ↳ db/seeds.rb:11
+  [1m[35m (1.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:11
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:11
+  [1m[36mMovie Create (0.6ms)[0m  [1m[32mINSERT INTO "movies" ("name") VALUES (?)[0m  [["name", "Beauty and the Beast"]]
+  ↳ db/seeds.rb:11
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:11
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:11
+  [1m[36mMovie Create (0.4ms)[0m  [1m[32mINSERT INTO "movies" ("name") VALUES (?)[0m  [["name", "Finding Dory"]]
+  ↳ db/seeds.rb:11
+  [1m[35m (3.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:11
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:11
+  [1m[36mMovie Create (0.4ms)[0m  [1m[32mINSERT INTO "movies" ("name") VALUES (?)[0m  [["name", "Pirates of the Caribbean: Dead Man’s Chest"]]
+  ↳ db/seeds.rb:11
+  [1m[35m (3.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:11
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:11
+  [1m[36mMovie Create (0.4ms)[0m  [1m[32mINSERT INTO "movies" ("name") VALUES (?)[0m  [["name", "Toy Story 3"]]
+  ↳ db/seeds.rb:11
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:11
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:11
+  [1m[36mMovie Create (0.4ms)[0m  [1m[32mINSERT INTO "movies" ("name") VALUES (?)[0m  [["name", "Wonder Woman"]]
+  ↳ db/seeds.rb:11
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:11
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:11
+  [1m[36mMovie Create (0.2ms)[0m  [1m[32mINSERT INTO "movies" ("name") VALUES (?)[0m  [["name", "Iron Man 3"]]
+  ↳ db/seeds.rb:11
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:11
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ db/seeds.rb:16
+  [1m[36mMovie Load (0.2ms)[0m  [1m[34mSELECT "movies".* FROM "movies"[0m
+  ↳ db/seeds.rb:17
+  [1m[36mMovie Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "movies" INNER JOIN "liked_movies" ON "movies"."id" = "liked_movies"."movie_id" WHERE "liked_movies"."user_id" = ? AND "movies"."id" = ? LIMIT ?[0m  [["user_id", 28], ["id", 14], ["LIMIT", 1]]
+  ↳ db/seeds.rb:18
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:21
+  [1m[36mLikedMovie Create (0.3ms)[0m  [1m[32mINSERT INTO "liked_movies" ("user_id", "movie_id") VALUES (?, ?)[0m  [["user_id", 28], ["movie_id", 14]]
+  ↳ db/seeds.rb:21
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:21
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ db/seeds.rb:16
+  [1m[36mMovie Load (0.1ms)[0m  [1m[34mSELECT "movies".* FROM "movies"[0m
+  ↳ db/seeds.rb:17
+  [1m[36mMovie Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "movies" INNER JOIN "liked_movies" ON "movies"."id" = "liked_movies"."movie_id" WHERE "liked_movies"."user_id" = ? AND "movies"."id" = ? LIMIT ?[0m  [["user_id", 3], ["id", 15], ["LIMIT", 1]]
+  ↳ db/seeds.rb:18
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:21
+  [1m[36mLikedMovie Create (0.3ms)[0m  [1m[32mINSERT INTO "liked_movies" ("user_id", "movie_id") VALUES (?, ?)[0m  [["user_id", 3], ["movie_id", 15]]
+  ↳ db/seeds.rb:21
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:21
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ db/seeds.rb:16
+  [1m[36mMovie Load (0.1ms)[0m  [1m[34mSELECT "movies".* FROM "movies"[0m
+  ↳ db/seeds.rb:17
+  [1m[36mMovie Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "movies" INNER JOIN "liked_movies" ON "movies"."id" = "liked_movies"."movie_id" WHERE "liked_movies"."user_id" = ? AND "movies"."id" = ? LIMIT ?[0m  [["user_id", 11], ["id", 7], ["LIMIT", 1]]
+  ↳ db/seeds.rb:18
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:21
+  [1m[36mLikedMovie Create (0.3ms)[0m  [1m[32mINSERT INTO "liked_movies" ("user_id", "movie_id") VALUES (?, ?)[0m  [["user_id", 11], ["movie_id", 7]]
+  ↳ db/seeds.rb:21
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:21
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ db/seeds.rb:16
+  [1m[36mMovie Load (0.1ms)[0m  [1m[34mSELECT "movies".* FROM "movies"[0m
+  ↳ db/seeds.rb:17
+  [1m[36mMovie Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "movies" INNER JOIN "liked_movies" ON "movies"."id" = "liked_movies"."movie_id" WHERE "liked_movies"."user_id" = ? AND "movies"."id" = ? LIMIT ?[0m  [["user_id", 23], ["id", 3], ["LIMIT", 1]]
+  ↳ db/seeds.rb:18
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:21
+  [1m[36mLikedMovie Create (0.3ms)[0m  [1m[32mINSERT INTO "liked_movies" ("user_id", "movie_id") VALUES (?, ?)[0m  [["user_id", 23], ["movie_id", 3]]
+  ↳ db/seeds.rb:21
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:21
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ db/seeds.rb:16
+  [1m[36mMovie Load (0.1ms)[0m  [1m[34mSELECT "movies".* FROM "movies"[0m
+  ↳ db/seeds.rb:17
+  [1m[36mMovie Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "movies" INNER JOIN "liked_movies" ON "movies"."id" = "liked_movies"."movie_id" WHERE "liked_movies"."user_id" = ? AND "movies"."id" = ? LIMIT ?[0m  [["user_id", 19], ["id", 3], ["LIMIT", 1]]
+  ↳ db/seeds.rb:18
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:21
+  [1m[36mLikedMovie Create (0.3ms)[0m  [1m[32mINSERT INTO "liked_movies" ("user_id", "movie_id") VALUES (?, ?)[0m  [["user_id", 19], ["movie_id", 3]]
+  ↳ db/seeds.rb:21
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:21
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ db/seeds.rb:16
+  [1m[36mMovie Load (0.1ms)[0m  [1m[34mSELECT "movies".* FROM "movies"[0m
+  ↳ db/seeds.rb:17
+  [1m[36mMovie Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "movies" INNER JOIN "liked_movies" ON "movies"."id" = "liked_movies"."movie_id" WHERE "liked_movies"."user_id" = ? AND "movies"."id" = ? LIMIT ?[0m  [["user_id", 13], ["id", 3], ["LIMIT", 1]]
+  ↳ db/seeds.rb:18
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:21
+  [1m[36mLikedMovie Create (0.3ms)[0m  [1m[32mINSERT INTO "liked_movies" ("user_id", "movie_id") VALUES (?, ?)[0m  [["user_id", 13], ["movie_id", 3]]
+  ↳ db/seeds.rb:21
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:21
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ db/seeds.rb:16
+  [1m[36mMovie Load (0.1ms)[0m  [1m[34mSELECT "movies".* FROM "movies"[0m
+  ↳ db/seeds.rb:17
+  [1m[36mMovie Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "movies" INNER JOIN "liked_movies" ON "movies"."id" = "liked_movies"."movie_id" WHERE "liked_movies"."user_id" = ? AND "movies"."id" = ? LIMIT ?[0m  [["user_id", 27], ["id", 1], ["LIMIT", 1]]
+  ↳ db/seeds.rb:18
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:21
+  [1m[36mLikedMovie Create (0.3ms)[0m  [1m[32mINSERT INTO "liked_movies" ("user_id", "movie_id") VALUES (?, ?)[0m  [["user_id", 27], ["movie_id", 1]]
+  ↳ db/seeds.rb:21
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:21
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ db/seeds.rb:16
+  [1m[36mMovie Load (0.1ms)[0m  [1m[34mSELECT "movies".* FROM "movies"[0m
+  ↳ db/seeds.rb:17
+  [1m[36mMovie Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "movies" INNER JOIN "liked_movies" ON "movies"."id" = "liked_movies"."movie_id" WHERE "liked_movies"."user_id" = ? AND "movies"."id" = ? LIMIT ?[0m  [["user_id", 7], ["id", 3], ["LIMIT", 1]]
+  ↳ db/seeds.rb:18
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:21
+  [1m[36mLikedMovie Create (0.3ms)[0m  [1m[32mINSERT INTO "liked_movies" ("user_id", "movie_id") VALUES (?, ?)[0m  [["user_id", 7], ["movie_id", 3]]
+  ↳ db/seeds.rb:21
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:21
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ db/seeds.rb:16
+  [1m[36mMovie Load (0.1ms)[0m  [1m[34mSELECT "movies".* FROM "movies"[0m
+  ↳ db/seeds.rb:17
+  [1m[36mMovie Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "movies" INNER JOIN "liked_movies" ON "movies"."id" = "liked_movies"."movie_id" WHERE "liked_movies"."user_id" = ? AND "movies"."id" = ? LIMIT ?[0m  [["user_id", 29], ["id", 14], ["LIMIT", 1]]
+  ↳ db/seeds.rb:18
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:21
+  [1m[36mLikedMovie Create (0.2ms)[0m  [1m[32mINSERT INTO "liked_movies" ("user_id", "movie_id") VALUES (?, ?)[0m  [["user_id", 29], ["movie_id", 14]]
+  ↳ db/seeds.rb:21
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:21
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ db/seeds.rb:16
+  [1m[36mMovie Load (0.1ms)[0m  [1m[34mSELECT "movies".* FROM "movies"[0m
+  ↳ db/seeds.rb:17
+  [1m[36mMovie Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "movies" INNER JOIN "liked_movies" ON "movies"."id" = "liked_movies"."movie_id" WHERE "liked_movies"."user_id" = ? AND "movies"."id" = ? LIMIT ?[0m  [["user_id", 25], ["id", 13], ["LIMIT", 1]]
+  ↳ db/seeds.rb:18
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:21
+  [1m[36mLikedMovie Create (0.2ms)[0m  [1m[32mINSERT INTO "liked_movies" ("user_id", "movie_id") VALUES (?, ?)[0m  [["user_id", 25], ["movie_id", 13]]
+  ↳ db/seeds.rb:21
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:21
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ db/seeds.rb:16
+  [1m[36mMovie Load (0.1ms)[0m  [1m[34mSELECT "movies".* FROM "movies"[0m
+  ↳ db/seeds.rb:17
+  [1m[36mMovie Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "movies" INNER JOIN "liked_movies" ON "movies"."id" = "liked_movies"."movie_id" WHERE "liked_movies"."user_id" = ? AND "movies"."id" = ? LIMIT ?[0m  [["user_id", 23], ["id", 6], ["LIMIT", 1]]
+  ↳ db/seeds.rb:18
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:21
+  [1m[36mLikedMovie Create (0.2ms)[0m  [1m[32mINSERT INTO "liked_movies" ("user_id", "movie_id") VALUES (?, ?)[0m  [["user_id", 23], ["movie_id", 6]]
+  ↳ db/seeds.rb:21
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:21
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ db/seeds.rb:16
+  [1m[36mMovie Load (0.1ms)[0m  [1m[34mSELECT "movies".* FROM "movies"[0m
+  ↳ db/seeds.rb:17
+  [1m[36mMovie Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "movies" INNER JOIN "liked_movies" ON "movies"."id" = "liked_movies"."movie_id" WHERE "liked_movies"."user_id" = ? AND "movies"."id" = ? LIMIT ?[0m  [["user_id", 24], ["id", 7], ["LIMIT", 1]]
+  ↳ db/seeds.rb:18
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:21
+  [1m[36mLikedMovie Create (0.2ms)[0m  [1m[32mINSERT INTO "liked_movies" ("user_id", "movie_id") VALUES (?, ?)[0m  [["user_id", 24], ["movie_id", 7]]
+  ↳ db/seeds.rb:21
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:21
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ db/seeds.rb:16
+  [1m[36mMovie Load (0.1ms)[0m  [1m[34mSELECT "movies".* FROM "movies"[0m
+  ↳ db/seeds.rb:17
+  [1m[36mMovie Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "movies" INNER JOIN "liked_movies" ON "movies"."id" = "liked_movies"."movie_id" WHERE "liked_movies"."user_id" = ? AND "movies"."id" = ? LIMIT ?[0m  [["user_id", 14], ["id", 7], ["LIMIT", 1]]
+  ↳ db/seeds.rb:18
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:21
+  [1m[36mLikedMovie Create (0.2ms)[0m  [1m[32mINSERT INTO "liked_movies" ("user_id", "movie_id") VALUES (?, ?)[0m  [["user_id", 14], ["movie_id", 7]]
+  ↳ db/seeds.rb:21
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:21
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ db/seeds.rb:16
+  [1m[36mMovie Load (0.1ms)[0m  [1m[34mSELECT "movies".* FROM "movies"[0m
+  ↳ db/seeds.rb:17
+  [1m[36mMovie Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "movies" INNER JOIN "liked_movies" ON "movies"."id" = "liked_movies"."movie_id" WHERE "liked_movies"."user_id" = ? AND "movies"."id" = ? LIMIT ?[0m  [["user_id", 7], ["id", 5], ["LIMIT", 1]]
+  ↳ db/seeds.rb:18
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:21
+  [1m[36mLikedMovie Create (0.3ms)[0m  [1m[32mINSERT INTO "liked_movies" ("user_id", "movie_id") VALUES (?, ?)[0m  [["user_id", 7], ["movie_id", 5]]
+  ↳ db/seeds.rb:21
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:21
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ db/seeds.rb:16
+  [1m[36mMovie Load (0.1ms)[0m  [1m[34mSELECT "movies".* FROM "movies"[0m
+  ↳ db/seeds.rb:17
+  [1m[36mMovie Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "movies" INNER JOIN "liked_movies" ON "movies"."id" = "liked_movies"."movie_id" WHERE "liked_movies"."user_id" = ? AND "movies"."id" = ? LIMIT ?[0m  [["user_id", 8], ["id", 4], ["LIMIT", 1]]
+  ↳ db/seeds.rb:18
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:21
+  [1m[36mLikedMovie Create (0.2ms)[0m  [1m[32mINSERT INTO "liked_movies" ("user_id", "movie_id") VALUES (?, ?)[0m  [["user_id", 8], ["movie_id", 4]]
+  ↳ db/seeds.rb:21
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:21
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ db/seeds.rb:16
+  [1m[36mMovie Load (0.1ms)[0m  [1m[34mSELECT "movies".* FROM "movies"[0m
+  ↳ db/seeds.rb:17
+  [1m[36mMovie Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "movies" INNER JOIN "liked_movies" ON "movies"."id" = "liked_movies"."movie_id" WHERE "liked_movies"."user_id" = ? AND "movies"."id" = ? LIMIT ?[0m  [["user_id", 11], ["id", 15], ["LIMIT", 1]]
+  ↳ db/seeds.rb:18
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:21
+  [1m[36mLikedMovie Create (0.2ms)[0m  [1m[32mINSERT INTO "liked_movies" ("user_id", "movie_id") VALUES (?, ?)[0m  [["user_id", 11], ["movie_id", 15]]
+  ↳ db/seeds.rb:21
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:21
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ db/seeds.rb:16
+  [1m[36mMovie Load (0.1ms)[0m  [1m[34mSELECT "movies".* FROM "movies"[0m
+  ↳ db/seeds.rb:17
+  [1m[36mMovie Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "movies" INNER JOIN "liked_movies" ON "movies"."id" = "liked_movies"."movie_id" WHERE "liked_movies"."user_id" = ? AND "movies"."id" = ? LIMIT ?[0m  [["user_id", 16], ["id", 7], ["LIMIT", 1]]
+  ↳ db/seeds.rb:18
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:21
+  [1m[36mLikedMovie Create (0.3ms)[0m  [1m[32mINSERT INTO "liked_movies" ("user_id", "movie_id") VALUES (?, ?)[0m  [["user_id", 16], ["movie_id", 7]]
+  ↳ db/seeds.rb:21
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:21
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ db/seeds.rb:16
+  [1m[36mMovie Load (0.1ms)[0m  [1m[34mSELECT "movies".* FROM "movies"[0m
+  ↳ db/seeds.rb:17
+  [1m[36mMovie Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "movies" INNER JOIN "liked_movies" ON "movies"."id" = "liked_movies"."movie_id" WHERE "liked_movies"."user_id" = ? AND "movies"."id" = ? LIMIT ?[0m  [["user_id", 30], ["id", 14], ["LIMIT", 1]]
+  ↳ db/seeds.rb:18
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:21
+  [1m[36mLikedMovie Create (0.3ms)[0m  [1m[32mINSERT INTO "liked_movies" ("user_id", "movie_id") VALUES (?, ?)[0m  [["user_id", 30], ["movie_id", 14]]
+  ↳ db/seeds.rb:21
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:21
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ db/seeds.rb:16
+  [1m[36mMovie Load (0.1ms)[0m  [1m[34mSELECT "movies".* FROM "movies"[0m
+  ↳ db/seeds.rb:17
+  [1m[36mMovie Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "movies" INNER JOIN "liked_movies" ON "movies"."id" = "liked_movies"."movie_id" WHERE "liked_movies"."user_id" = ? AND "movies"."id" = ? LIMIT ?[0m  [["user_id", 9], ["id", 1], ["LIMIT", 1]]
+  ↳ db/seeds.rb:18
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:21
+  [1m[36mLikedMovie Create (0.2ms)[0m  [1m[32mINSERT INTO "liked_movies" ("user_id", "movie_id") VALUES (?, ?)[0m  [["user_id", 9], ["movie_id", 1]]
+  ↳ db/seeds.rb:21
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:21
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ db/seeds.rb:16
+  [1m[36mMovie Load (0.1ms)[0m  [1m[34mSELECT "movies".* FROM "movies"[0m
+  ↳ db/seeds.rb:17
+  [1m[36mMovie Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "movies" INNER JOIN "liked_movies" ON "movies"."id" = "liked_movies"."movie_id" WHERE "liked_movies"."user_id" = ? AND "movies"."id" = ? LIMIT ?[0m  [["user_id", 7], ["id", 1], ["LIMIT", 1]]
+  ↳ db/seeds.rb:18
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:21
+  [1m[36mLikedMovie Create (0.2ms)[0m  [1m[32mINSERT INTO "liked_movies" ("user_id", "movie_id") VALUES (?, ?)[0m  [["user_id", 7], ["movie_id", 1]]
+  ↳ db/seeds.rb:21
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:21
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ db/seeds.rb:16
+  [1m[36mMovie Load (0.1ms)[0m  [1m[34mSELECT "movies".* FROM "movies"[0m
+  ↳ db/seeds.rb:17
+  [1m[36mMovie Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "movies" INNER JOIN "liked_movies" ON "movies"."id" = "liked_movies"."movie_id" WHERE "liked_movies"."user_id" = ? AND "movies"."id" = ? LIMIT ?[0m  [["user_id", 9], ["id", 9], ["LIMIT", 1]]
+  ↳ db/seeds.rb:18
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:21
+  [1m[36mLikedMovie Create (0.3ms)[0m  [1m[32mINSERT INTO "liked_movies" ("user_id", "movie_id") VALUES (?, ?)[0m  [["user_id", 9], ["movie_id", 9]]
+  ↳ db/seeds.rb:21
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:21
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ db/seeds.rb:16
+  [1m[36mMovie Load (0.1ms)[0m  [1m[34mSELECT "movies".* FROM "movies"[0m
+  ↳ db/seeds.rb:17
+  [1m[36mMovie Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "movies" INNER JOIN "liked_movies" ON "movies"."id" = "liked_movies"."movie_id" WHERE "liked_movies"."user_id" = ? AND "movies"."id" = ? LIMIT ?[0m  [["user_id", 1], ["id", 13], ["LIMIT", 1]]
+  ↳ db/seeds.rb:18
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:21
+  [1m[36mLikedMovie Create (0.3ms)[0m  [1m[32mINSERT INTO "liked_movies" ("user_id", "movie_id") VALUES (?, ?)[0m  [["user_id", 1], ["movie_id", 13]]
+  ↳ db/seeds.rb:21
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:21
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ db/seeds.rb:16
+  [1m[36mMovie Load (0.1ms)[0m  [1m[34mSELECT "movies".* FROM "movies"[0m
+  ↳ db/seeds.rb:17
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/apple/.rbenv/versions/2.6.1/bin/rake:23
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ db/seeds.rb:2
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:2
+  [1m[36mUser Destroy (0.3ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = ?[0m  [["id", 1]]
+  ↳ db/seeds.rb:2
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:2
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:2
+  [1m[36mUser Destroy (0.4ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = ?[0m  [["id", 2]]
+  ↳ db/seeds.rb:2
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:2
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:2
+  [1m[36mUser Destroy (0.3ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = ?[0m  [["id", 3]]
+  ↳ db/seeds.rb:2
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:2
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:2
+  [1m[36mUser Destroy (0.2ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = ?[0m  [["id", 4]]
+  ↳ db/seeds.rb:2
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:2
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:2
+  [1m[36mUser Destroy (0.2ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = ?[0m  [["id", 5]]
+  ↳ db/seeds.rb:2
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:2
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:2
+  [1m[36mUser Destroy (0.2ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = ?[0m  [["id", 6]]
+  ↳ db/seeds.rb:2
+  [1m[35m (0.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:2
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:2
+  [1m[36mUser Destroy (0.3ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = ?[0m  [["id", 7]]
+  ↳ db/seeds.rb:2
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:2
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:2
+  [1m[36mUser Destroy (0.3ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = ?[0m  [["id", 8]]
+  ↳ db/seeds.rb:2
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:2
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:2
+  [1m[36mUser Destroy (0.2ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = ?[0m  [["id", 9]]
+  ↳ db/seeds.rb:2
+  [1m[35m (0.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:2
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:2
+  [1m[36mUser Destroy (0.2ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = ?[0m  [["id", 10]]
+  ↳ db/seeds.rb:2
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:2
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:2
+  [1m[36mUser Destroy (0.5ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = ?[0m  [["id", 11]]
+  ↳ db/seeds.rb:2
+  [1m[35m (50.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:2
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:2
+  [1m[36mUser Destroy (0.3ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = ?[0m  [["id", 12]]
+  ↳ db/seeds.rb:2
+  [1m[35m (0.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:2
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:2
+  [1m[36mUser Destroy (0.3ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = ?[0m  [["id", 13]]
+  ↳ db/seeds.rb:2
+  [1m[35m (12.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:2
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:2
+  [1m[36mUser Destroy (0.3ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = ?[0m  [["id", 14]]
+  ↳ db/seeds.rb:2
+  [1m[35m (4.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:2
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:2
+  [1m[36mUser Destroy (0.3ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = ?[0m  [["id", 15]]
+  ↳ db/seeds.rb:2
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:2
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:2
+  [1m[36mUser Destroy (0.3ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = ?[0m  [["id", 16]]
+  ↳ db/seeds.rb:2
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:2
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:2
+  [1m[36mUser Destroy (0.3ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = ?[0m  [["id", 17]]
+  ↳ db/seeds.rb:2
+  [1m[35m (2.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:2
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:2
+  [1m[36mUser Destroy (0.3ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = ?[0m  [["id", 18]]
+  ↳ db/seeds.rb:2
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:2
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:2
+  [1m[36mUser Destroy (0.3ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = ?[0m  [["id", 19]]
+  ↳ db/seeds.rb:2
+  [1m[35m (0.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:2
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:2
+  [1m[36mUser Destroy (0.3ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = ?[0m  [["id", 20]]
+  ↳ db/seeds.rb:2
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:2
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:2
+  [1m[36mUser Destroy (0.3ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = ?[0m  [["id", 21]]
+  ↳ db/seeds.rb:2
+  [1m[35m (1.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:2
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:2
+  [1m[36mUser Destroy (0.3ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = ?[0m  [["id", 22]]
+  ↳ db/seeds.rb:2
+  [1m[35m (0.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:2
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:2
+  [1m[36mUser Destroy (0.3ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = ?[0m  [["id", 23]]
+  ↳ db/seeds.rb:2
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:2
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:2
+  [1m[36mUser Destroy (0.3ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = ?[0m  [["id", 24]]
+  ↳ db/seeds.rb:2
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:2
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:2
+  [1m[36mUser Destroy (0.3ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = ?[0m  [["id", 25]]
+  ↳ db/seeds.rb:2
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:2
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:2
+  [1m[36mUser Destroy (0.3ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = ?[0m  [["id", 26]]
+  ↳ db/seeds.rb:2
+  [1m[35m (24.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:2
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:2
+  [1m[36mUser Destroy (0.3ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = ?[0m  [["id", 27]]
+  ↳ db/seeds.rb:2
+  [1m[35m (3.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:2
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:2
+  [1m[36mUser Destroy (0.3ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = ?[0m  [["id", 28]]
+  ↳ db/seeds.rb:2
+  [1m[35m (2.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:2
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:2
+  [1m[36mUser Destroy (0.3ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = ?[0m  [["id", 29]]
+  ↳ db/seeds.rb:2
+  [1m[35m (0.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:2
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:2
+  [1m[36mUser Destroy (0.3ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = ?[0m  [["id", 30]]
+  ↳ db/seeds.rb:2
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:2
+  [1m[36mMovie Load (0.3ms)[0m  [1m[34mSELECT "movies".* FROM "movies"[0m
+  ↳ db/seeds.rb:3
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:3
+  [1m[36mMovie Destroy (0.3ms)[0m  [1m[31mDELETE FROM "movies" WHERE "movies"."id" = ?[0m  [["id", 1]]
+  ↳ db/seeds.rb:3
+  [1m[35m (5.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:3
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:3
+  [1m[36mMovie Destroy (0.4ms)[0m  [1m[31mDELETE FROM "movies" WHERE "movies"."id" = ?[0m  [["id", 2]]
+  ↳ db/seeds.rb:3
+  [1m[35m (1.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:3
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:3
+  [1m[36mMovie Destroy (0.3ms)[0m  [1m[31mDELETE FROM "movies" WHERE "movies"."id" = ?[0m  [["id", 3]]
+  ↳ db/seeds.rb:3
+  [1m[35m (8.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:3
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:3
+  [1m[36mMovie Destroy (0.4ms)[0m  [1m[31mDELETE FROM "movies" WHERE "movies"."id" = ?[0m  [["id", 4]]
+  ↳ db/seeds.rb:3
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:3
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:3
+  [1m[36mMovie Destroy (0.3ms)[0m  [1m[31mDELETE FROM "movies" WHERE "movies"."id" = ?[0m  [["id", 5]]
+  ↳ db/seeds.rb:3
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:3
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:3
+  [1m[36mMovie Destroy (0.3ms)[0m  [1m[31mDELETE FROM "movies" WHERE "movies"."id" = ?[0m  [["id", 6]]
+  ↳ db/seeds.rb:3
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:3
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:3
+  [1m[36mMovie Destroy (0.3ms)[0m  [1m[31mDELETE FROM "movies" WHERE "movies"."id" = ?[0m  [["id", 7]]
+  ↳ db/seeds.rb:3
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:3
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:3
+  [1m[36mMovie Destroy (0.3ms)[0m  [1m[31mDELETE FROM "movies" WHERE "movies"."id" = ?[0m  [["id", 8]]
+  ↳ db/seeds.rb:3
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:3
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:3
+  [1m[36mMovie Destroy (0.3ms)[0m  [1m[31mDELETE FROM "movies" WHERE "movies"."id" = ?[0m  [["id", 9]]
+  ↳ db/seeds.rb:3
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:3
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:3
+  [1m[36mMovie Destroy (0.3ms)[0m  [1m[31mDELETE FROM "movies" WHERE "movies"."id" = ?[0m  [["id", 10]]
+  ↳ db/seeds.rb:3
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:3
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:3
+  [1m[36mMovie Destroy (0.4ms)[0m  [1m[31mDELETE FROM "movies" WHERE "movies"."id" = ?[0m  [["id", 11]]
+  ↳ db/seeds.rb:3
+  [1m[35m (1.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:3
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:3
+  [1m[36mMovie Destroy (0.4ms)[0m  [1m[31mDELETE FROM "movies" WHERE "movies"."id" = ?[0m  [["id", 12]]
+  ↳ db/seeds.rb:3
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:3
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:3
+  [1m[36mMovie Destroy (0.3ms)[0m  [1m[31mDELETE FROM "movies" WHERE "movies"."id" = ?[0m  [["id", 13]]
+  ↳ db/seeds.rb:3
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:3
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:3
+  [1m[36mMovie Destroy (0.2ms)[0m  [1m[31mDELETE FROM "movies" WHERE "movies"."id" = ?[0m  [["id", 14]]
+  ↳ db/seeds.rb:3
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:3
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:3
+  [1m[36mMovie Destroy (0.2ms)[0m  [1m[31mDELETE FROM "movies" WHERE "movies"."id" = ?[0m  [["id", 15]]
+  ↳ db/seeds.rb:3
+  [1m[35m (0.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:3
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:5
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("name") VALUES (?)[0m  [["name", "Geraldo Ernser"]]
+  ↳ db/seeds.rb:5
+  [1m[35m (8.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:5
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:5
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("name") VALUES (?)[0m  [["name", "Ernest Berge"]]
+  ↳ db/seeds.rb:5
+  [1m[35m (1.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:5
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:5
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("name") VALUES (?)[0m  [["name", "Kristina Koss"]]
+  ↳ db/seeds.rb:5
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:5
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:5
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("name") VALUES (?)[0m  [["name", "Mrs. Ron Zieme"]]
+  ↳ db/seeds.rb:5
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:5
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:5
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("name") VALUES (?)[0m  [["name", "Lino Ledner"]]
+  ↳ db/seeds.rb:5
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:5
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:5
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("name") VALUES (?)[0m  [["name", "Tyson Jenkins"]]
+  ↳ db/seeds.rb:5
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:5
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:5
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO "users" ("name") VALUES (?)[0m  [["name", "Izetta Miller"]]
+  ↳ db/seeds.rb:5
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:5
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:5
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("name") VALUES (?)[0m  [["name", "Erin Corkery"]]
+  ↳ db/seeds.rb:5
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:5
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:5
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO "users" ("name") VALUES (?)[0m  [["name", "Dennis Jacobson"]]
+  ↳ db/seeds.rb:5
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:5
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:5
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO "users" ("name") VALUES (?)[0m  [["name", "Mrs. Tyler Jacobs"]]
+  ↳ db/seeds.rb:5
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:5
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:5
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO "users" ("name") VALUES (?)[0m  [["name", "Mr. Gladys Heaney"]]
+  ↳ db/seeds.rb:5
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:5
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:5
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO "users" ("name") VALUES (?)[0m  [["name", "Monty Pouros"]]
+  ↳ db/seeds.rb:5
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:5
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:5
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO "users" ("name") VALUES (?)[0m  [["name", "Miss Kirby Farrell"]]
+  ↳ db/seeds.rb:5
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:5
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:5
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO "users" ("name") VALUES (?)[0m  [["name", "Cheree Bergnaum PhD"]]
+  ↳ db/seeds.rb:5
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:5
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:5
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO "users" ("name") VALUES (?)[0m  [["name", "Clair Stiedemann DDS"]]
+  ↳ db/seeds.rb:5
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:5
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:5
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO "users" ("name") VALUES (?)[0m  [["name", "Mrs. Aurelio Swift"]]
+  ↳ db/seeds.rb:5
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:5
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:5
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO "users" ("name") VALUES (?)[0m  [["name", "Miss Colby Stoltenberg"]]
+  ↳ db/seeds.rb:5
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:5
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:5
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO "users" ("name") VALUES (?)[0m  [["name", "Drew Grimes"]]
+  ↳ db/seeds.rb:5
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:5
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:5
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO "users" ("name") VALUES (?)[0m  [["name", "Nolan Bogisich"]]
+  ↳ db/seeds.rb:5
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:5
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:5
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO "users" ("name") VALUES (?)[0m  [["name", "Dusty Casper"]]
+  ↳ db/seeds.rb:5
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:5
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:5
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO "users" ("name") VALUES (?)[0m  [["name", "Jayson Rath"]]
+  ↳ db/seeds.rb:5
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:5
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:5
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO "users" ("name") VALUES (?)[0m  [["name", "Garret Hessel"]]
+  ↳ db/seeds.rb:5
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:5
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:5
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO "users" ("name") VALUES (?)[0m  [["name", "Dr. Georgiana Denesik"]]
+  ↳ db/seeds.rb:5
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:5
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:5
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO "users" ("name") VALUES (?)[0m  [["name", "Eileen Okuneva"]]
+  ↳ db/seeds.rb:5
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:5
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:5
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO "users" ("name") VALUES (?)[0m  [["name", "Elvina Roob"]]
+  ↳ db/seeds.rb:5
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:5
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:5
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO "users" ("name") VALUES (?)[0m  [["name", "Vashti Hudson"]]
+  ↳ db/seeds.rb:5
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:5
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:5
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO "users" ("name") VALUES (?)[0m  [["name", "Jesus Sawayn"]]
+  ↳ db/seeds.rb:5
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:5
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:5
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO "users" ("name") VALUES (?)[0m  [["name", "Nickolas Ryan DVM"]]
+  ↳ db/seeds.rb:5
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:5
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:5
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO "users" ("name") VALUES (?)[0m  [["name", "Trina Rolfson"]]
+  ↳ db/seeds.rb:5
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:5
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:5
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO "users" ("name") VALUES (?)[0m  [["name", "Terence Hills"]]
+  ↳ db/seeds.rb:5
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:5
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:11
+  [1m[36mMovie Create (0.2ms)[0m  [1m[32mINSERT INTO "movies" ("name") VALUES (?)[0m  [["name", "Avengers: Infinity War"]]
+  ↳ db/seeds.rb:11
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:11
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:11
+  [1m[36mMovie Create (0.2ms)[0m  [1m[32mINSERT INTO "movies" ("name") VALUES (?)[0m  [["name", "Star Wars: The Force Awakens"]]
+  ↳ db/seeds.rb:11
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:11
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:11
+  [1m[36mMovie Create (0.2ms)[0m  [1m[32mINSERT INTO "movies" ("name") VALUES (?)[0m  [["name", "Avatar"]]
+  ↳ db/seeds.rb:11
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:11
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:11
+  [1m[36mMovie Create (0.2ms)[0m  [1m[32mINSERT INTO "movies" ("name") VALUES (?)[0m  [["name", "Titanic"]]
+  ↳ db/seeds.rb:11
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:11
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:11
+  [1m[36mMovie Create (0.2ms)[0m  [1m[32mINSERT INTO "movies" ("name") VALUES (?)[0m  [["name", "Jurassic World"]]
+  ↳ db/seeds.rb:11
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:11
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:11
+  [1m[36mMovie Create (0.2ms)[0m  [1m[32mINSERT INTO "movies" ("name") VALUES (?)[0m  [["name", "Black Panther"]]
+  ↳ db/seeds.rb:11
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:11
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:11
+  [1m[36mMovie Create (0.2ms)[0m  [1m[32mINSERT INTO "movies" ("name") VALUES (?)[0m  [["name", "Marvel’s The Avengers"]]
+  ↳ db/seeds.rb:11
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:11
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:11
+  [1m[36mMovie Create (0.2ms)[0m  [1m[32mINSERT INTO "movies" ("name") VALUES (?)[0m  [["name", "Star Wars: The Last Jedi"]]
+  ↳ db/seeds.rb:11
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:11
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:11
+  [1m[36mMovie Create (0.2ms)[0m  [1m[32mINSERT INTO "movies" ("name") VALUES (?)[0m  [["name", "The Dark Knight"]]
+  ↳ db/seeds.rb:11
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:11
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:11
+  [1m[36mMovie Create (0.2ms)[0m  [1m[32mINSERT INTO "movies" ("name") VALUES (?)[0m  [["name", "Beauty and the Beast"]]
+  ↳ db/seeds.rb:11
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:11
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:11
+  [1m[36mMovie Create (0.2ms)[0m  [1m[32mINSERT INTO "movies" ("name") VALUES (?)[0m  [["name", "Finding Dory"]]
+  ↳ db/seeds.rb:11
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:11
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:11
+  [1m[36mMovie Create (0.3ms)[0m  [1m[32mINSERT INTO "movies" ("name") VALUES (?)[0m  [["name", "Pirates of the Caribbean: Dead Man’s Chest"]]
+  ↳ db/seeds.rb:11
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:11
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:11
+  [1m[36mMovie Create (0.3ms)[0m  [1m[32mINSERT INTO "movies" ("name") VALUES (?)[0m  [["name", "Toy Story 3"]]
+  ↳ db/seeds.rb:11
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:11
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:11
+  [1m[36mMovie Create (0.2ms)[0m  [1m[32mINSERT INTO "movies" ("name") VALUES (?)[0m  [["name", "Wonder Woman"]]
+  ↳ db/seeds.rb:11
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:11
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:11
+  [1m[36mMovie Create (0.2ms)[0m  [1m[32mINSERT INTO "movies" ("name") VALUES (?)[0m  [["name", "Iron Man 3"]]
+  ↳ db/seeds.rb:11
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:11
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ db/seeds.rb:16
+  [1m[36mMovie Load (0.2ms)[0m  [1m[34mSELECT "movies".* FROM "movies"[0m
+  ↳ db/seeds.rb:17
+  [1m[36mMovie Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "movies" INNER JOIN "liked_movies" ON "movies"."id" = "liked_movies"."movie_id" WHERE "liked_movies"."user_id" = ? AND "movies"."id" = ? LIMIT ?[0m  [["user_id", 39], ["id", 16], ["LIMIT", 1]]
+  ↳ db/seeds.rb:18
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:21
+  [1m[36mLikedMovie Create (0.3ms)[0m  [1m[32mINSERT INTO "liked_movies" ("user_id", "movie_id") VALUES (?, ?)[0m  [["user_id", 39], ["movie_id", 16]]
+  ↳ db/seeds.rb:21
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:21
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ db/seeds.rb:16
+  [1m[36mMovie Load (0.1ms)[0m  [1m[34mSELECT "movies".* FROM "movies"[0m
+  ↳ db/seeds.rb:17
+  [1m[36mMovie Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "movies" INNER JOIN "liked_movies" ON "movies"."id" = "liked_movies"."movie_id" WHERE "liked_movies"."user_id" = ? AND "movies"."id" = ? LIMIT ?[0m  [["user_id", 47], ["id", 18], ["LIMIT", 1]]
+  ↳ db/seeds.rb:18
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:21
+  [1m[36mLikedMovie Create (0.2ms)[0m  [1m[32mINSERT INTO "liked_movies" ("user_id", "movie_id") VALUES (?, ?)[0m  [["user_id", 47], ["movie_id", 18]]
+  ↳ db/seeds.rb:21
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:21
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ db/seeds.rb:16
+  [1m[36mMovie Load (0.1ms)[0m  [1m[34mSELECT "movies".* FROM "movies"[0m
+  ↳ db/seeds.rb:17
+  [1m[36mMovie Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "movies" INNER JOIN "liked_movies" ON "movies"."id" = "liked_movies"."movie_id" WHERE "liked_movies"."user_id" = ? AND "movies"."id" = ? LIMIT ?[0m  [["user_id", 36], ["id", 28], ["LIMIT", 1]]
+  ↳ db/seeds.rb:18
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:21
+  [1m[36mLikedMovie Create (0.2ms)[0m  [1m[32mINSERT INTO "liked_movies" ("user_id", "movie_id") VALUES (?, ?)[0m  [["user_id", 36], ["movie_id", 28]]
+  ↳ db/seeds.rb:21
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:21
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ db/seeds.rb:16
+  [1m[36mMovie Load (0.1ms)[0m  [1m[34mSELECT "movies".* FROM "movies"[0m
+  ↳ db/seeds.rb:17
+  [1m[36mMovie Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "movies" INNER JOIN "liked_movies" ON "movies"."id" = "liked_movies"."movie_id" WHERE "liked_movies"."user_id" = ? AND "movies"."id" = ? LIMIT ?[0m  [["user_id", 55], ["id", 26], ["LIMIT", 1]]
+  ↳ db/seeds.rb:18
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:21
+  [1m[36mLikedMovie Create (0.3ms)[0m  [1m[32mINSERT INTO "liked_movies" ("user_id", "movie_id") VALUES (?, ?)[0m  [["user_id", 55], ["movie_id", 26]]
+  ↳ db/seeds.rb:21
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:21
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ db/seeds.rb:16
+  [1m[36mMovie Load (0.1ms)[0m  [1m[34mSELECT "movies".* FROM "movies"[0m
+  ↳ db/seeds.rb:17
+  [1m[36mMovie Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "movies" INNER JOIN "liked_movies" ON "movies"."id" = "liked_movies"."movie_id" WHERE "liked_movies"."user_id" = ? AND "movies"."id" = ? LIMIT ?[0m  [["user_id", 32], ["id", 17], ["LIMIT", 1]]
+  ↳ db/seeds.rb:18
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:21
+  [1m[36mLikedMovie Create (0.2ms)[0m  [1m[32mINSERT INTO "liked_movies" ("user_id", "movie_id") VALUES (?, ?)[0m  [["user_id", 32], ["movie_id", 17]]
+  ↳ db/seeds.rb:21
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:21
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ db/seeds.rb:16
+  [1m[36mMovie Load (0.1ms)[0m  [1m[34mSELECT "movies".* FROM "movies"[0m
+  ↳ db/seeds.rb:17
+  [1m[36mMovie Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "movies" INNER JOIN "liked_movies" ON "movies"."id" = "liked_movies"."movie_id" WHERE "liked_movies"."user_id" = ? AND "movies"."id" = ? LIMIT ?[0m  [["user_id", 55], ["id", 18], ["LIMIT", 1]]
+  ↳ db/seeds.rb:18
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:21
+  [1m[36mLikedMovie Create (0.2ms)[0m  [1m[32mINSERT INTO "liked_movies" ("user_id", "movie_id") VALUES (?, ?)[0m  [["user_id", 55], ["movie_id", 18]]
+  ↳ db/seeds.rb:21
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:21
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ db/seeds.rb:16
+  [1m[36mMovie Load (0.1ms)[0m  [1m[34mSELECT "movies".* FROM "movies"[0m
+  ↳ db/seeds.rb:17
+  [1m[36mMovie Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "movies" INNER JOIN "liked_movies" ON "movies"."id" = "liked_movies"."movie_id" WHERE "liked_movies"."user_id" = ? AND "movies"."id" = ? LIMIT ?[0m  [["user_id", 60], ["id", 17], ["LIMIT", 1]]
+  ↳ db/seeds.rb:18
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:21
+  [1m[36mLikedMovie Create (0.2ms)[0m  [1m[32mINSERT INTO "liked_movies" ("user_id", "movie_id") VALUES (?, ?)[0m  [["user_id", 60], ["movie_id", 17]]
+  ↳ db/seeds.rb:21
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:21
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ db/seeds.rb:16
+  [1m[36mMovie Load (0.1ms)[0m  [1m[34mSELECT "movies".* FROM "movies"[0m
+  ↳ db/seeds.rb:17
+  [1m[36mMovie Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "movies" INNER JOIN "liked_movies" ON "movies"."id" = "liked_movies"."movie_id" WHERE "liked_movies"."user_id" = ? AND "movies"."id" = ? LIMIT ?[0m  [["user_id", 54], ["id", 21], ["LIMIT", 1]]
+  ↳ db/seeds.rb:18
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:21
+  [1m[36mLikedMovie Create (0.2ms)[0m  [1m[32mINSERT INTO "liked_movies" ("user_id", "movie_id") VALUES (?, ?)[0m  [["user_id", 54], ["movie_id", 21]]
+  ↳ db/seeds.rb:21
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:21
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ db/seeds.rb:16
+  [1m[36mMovie Load (0.1ms)[0m  [1m[34mSELECT "movies".* FROM "movies"[0m
+  ↳ db/seeds.rb:17
+  [1m[36mMovie Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "movies" INNER JOIN "liked_movies" ON "movies"."id" = "liked_movies"."movie_id" WHERE "liked_movies"."user_id" = ? AND "movies"."id" = ? LIMIT ?[0m  [["user_id", 59], ["id", 22], ["LIMIT", 1]]
+  ↳ db/seeds.rb:18
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:21
+  [1m[36mLikedMovie Create (0.2ms)[0m  [1m[32mINSERT INTO "liked_movies" ("user_id", "movie_id") VALUES (?, ?)[0m  [["user_id", 59], ["movie_id", 22]]
+  ↳ db/seeds.rb:21
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:21
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ db/seeds.rb:16
+  [1m[36mMovie Load (0.2ms)[0m  [1m[34mSELECT "movies".* FROM "movies"[0m
+  ↳ db/seeds.rb:17
+  [1m[36mMovie Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "movies" INNER JOIN "liked_movies" ON "movies"."id" = "liked_movies"."movie_id" WHERE "liked_movies"."user_id" = ? AND "movies"."id" = ? LIMIT ?[0m  [["user_id", 49], ["id", 18], ["LIMIT", 1]]
+  ↳ db/seeds.rb:18
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:21
+  [1m[36mLikedMovie Create (0.2ms)[0m  [1m[32mINSERT INTO "liked_movies" ("user_id", "movie_id") VALUES (?, ?)[0m  [["user_id", 49], ["movie_id", 18]]
+  ↳ db/seeds.rb:21
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:21
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ db/seeds.rb:16
+  [1m[36mMovie Load (0.1ms)[0m  [1m[34mSELECT "movies".* FROM "movies"[0m
+  ↳ db/seeds.rb:17
+  [1m[36mMovie Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "movies" INNER JOIN "liked_movies" ON "movies"."id" = "liked_movies"."movie_id" WHERE "liked_movies"."user_id" = ? AND "movies"."id" = ? LIMIT ?[0m  [["user_id", 49], ["id", 20], ["LIMIT", 1]]
+  ↳ db/seeds.rb:18
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:21
+  [1m[36mLikedMovie Create (0.2ms)[0m  [1m[32mINSERT INTO "liked_movies" ("user_id", "movie_id") VALUES (?, ?)[0m  [["user_id", 49], ["movie_id", 20]]
+  ↳ db/seeds.rb:21
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:21
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ db/seeds.rb:16
+  [1m[36mMovie Load (0.1ms)[0m  [1m[34mSELECT "movies".* FROM "movies"[0m
+  ↳ db/seeds.rb:17
+  [1m[36mMovie Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "movies" INNER JOIN "liked_movies" ON "movies"."id" = "liked_movies"."movie_id" WHERE "liked_movies"."user_id" = ? AND "movies"."id" = ? LIMIT ?[0m  [["user_id", 53], ["id", 26], ["LIMIT", 1]]
+  ↳ db/seeds.rb:18
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:21
+  [1m[36mLikedMovie Create (0.3ms)[0m  [1m[32mINSERT INTO "liked_movies" ("user_id", "movie_id") VALUES (?, ?)[0m  [["user_id", 53], ["movie_id", 26]]
+  ↳ db/seeds.rb:21
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:21
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ db/seeds.rb:16
+  [1m[36mMovie Load (0.1ms)[0m  [1m[34mSELECT "movies".* FROM "movies"[0m
+  ↳ db/seeds.rb:17
+  [1m[36mMovie Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "movies" INNER JOIN "liked_movies" ON "movies"."id" = "liked_movies"."movie_id" WHERE "liked_movies"."user_id" = ? AND "movies"."id" = ? LIMIT ?[0m  [["user_id", 53], ["id", 28], ["LIMIT", 1]]
+  ↳ db/seeds.rb:18
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:21
+  [1m[36mLikedMovie Create (0.2ms)[0m  [1m[32mINSERT INTO "liked_movies" ("user_id", "movie_id") VALUES (?, ?)[0m  [["user_id", 53], ["movie_id", 28]]
+  ↳ db/seeds.rb:21
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:21
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ db/seeds.rb:16
+  [1m[36mMovie Load (0.1ms)[0m  [1m[34mSELECT "movies".* FROM "movies"[0m
+  ↳ db/seeds.rb:17
+  [1m[36mMovie Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "movies" INNER JOIN "liked_movies" ON "movies"."id" = "liked_movies"."movie_id" WHERE "liked_movies"."user_id" = ? AND "movies"."id" = ? LIMIT ?[0m  [["user_id", 57], ["id", 26], ["LIMIT", 1]]
+  ↳ db/seeds.rb:18
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:21
+  [1m[36mLikedMovie Create (0.2ms)[0m  [1m[32mINSERT INTO "liked_movies" ("user_id", "movie_id") VALUES (?, ?)[0m  [["user_id", 57], ["movie_id", 26]]
+  ↳ db/seeds.rb:21
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:21
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ db/seeds.rb:16
+  [1m[36mMovie Load (0.1ms)[0m  [1m[34mSELECT "movies".* FROM "movies"[0m
+  ↳ db/seeds.rb:17
+  [1m[36mMovie Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "movies" INNER JOIN "liked_movies" ON "movies"."id" = "liked_movies"."movie_id" WHERE "liked_movies"."user_id" = ? AND "movies"."id" = ? LIMIT ?[0m  [["user_id", 35], ["id", 17], ["LIMIT", 1]]
+  ↳ db/seeds.rb:18
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:21
+  [1m[36mLikedMovie Create (0.2ms)[0m  [1m[32mINSERT INTO "liked_movies" ("user_id", "movie_id") VALUES (?, ?)[0m  [["user_id", 35], ["movie_id", 17]]
+  ↳ db/seeds.rb:21
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:21
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ db/seeds.rb:16
+  [1m[36mMovie Load (0.1ms)[0m  [1m[34mSELECT "movies".* FROM "movies"[0m
+  ↳ db/seeds.rb:17
+  [1m[36mMovie Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "movies" INNER JOIN "liked_movies" ON "movies"."id" = "liked_movies"."movie_id" WHERE "liked_movies"."user_id" = ? AND "movies"."id" = ? LIMIT ?[0m  [["user_id", 40], ["id", 27], ["LIMIT", 1]]
+  ↳ db/seeds.rb:18
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:21
+  [1m[36mLikedMovie Create (0.3ms)[0m  [1m[32mINSERT INTO "liked_movies" ("user_id", "movie_id") VALUES (?, ?)[0m  [["user_id", 40], ["movie_id", 27]]
+  ↳ db/seeds.rb:21
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:21
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ db/seeds.rb:16
+  [1m[36mMovie Load (0.1ms)[0m  [1m[34mSELECT "movies".* FROM "movies"[0m
+  ↳ db/seeds.rb:17
+  [1m[36mMovie Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "movies" INNER JOIN "liked_movies" ON "movies"."id" = "liked_movies"."movie_id" WHERE "liked_movies"."user_id" = ? AND "movies"."id" = ? LIMIT ?[0m  [["user_id", 43], ["id", 16], ["LIMIT", 1]]
+  ↳ db/seeds.rb:18
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:21
+  [1m[36mLikedMovie Create (0.3ms)[0m  [1m[32mINSERT INTO "liked_movies" ("user_id", "movie_id") VALUES (?, ?)[0m  [["user_id", 43], ["movie_id", 16]]
+  ↳ db/seeds.rb:21
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:21
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ db/seeds.rb:16
+  [1m[36mMovie Load (0.1ms)[0m  [1m[34mSELECT "movies".* FROM "movies"[0m
+  ↳ db/seeds.rb:17
+  [1m[36mMovie Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "movies" INNER JOIN "liked_movies" ON "movies"."id" = "liked_movies"."movie_id" WHERE "liked_movies"."user_id" = ? AND "movies"."id" = ? LIMIT ?[0m  [["user_id", 40], ["id", 21], ["LIMIT", 1]]
+  ↳ db/seeds.rb:18
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:21
+  [1m[36mLikedMovie Create (0.5ms)[0m  [1m[32mINSERT INTO "liked_movies" ("user_id", "movie_id") VALUES (?, ?)[0m  [["user_id", 40], ["movie_id", 21]]
+  ↳ db/seeds.rb:21
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:21
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ db/seeds.rb:16
+  [1m[36mMovie Load (0.1ms)[0m  [1m[34mSELECT "movies".* FROM "movies"[0m
+  ↳ db/seeds.rb:17
+  [1m[36mMovie Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "movies" INNER JOIN "liked_movies" ON "movies"."id" = "liked_movies"."movie_id" WHERE "liked_movies"."user_id" = ? AND "movies"."id" = ? LIMIT ?[0m  [["user_id", 37], ["id", 27], ["LIMIT", 1]]
+  ↳ db/seeds.rb:18
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:21
+  [1m[36mLikedMovie Create (0.2ms)[0m  [1m[32mINSERT INTO "liked_movies" ("user_id", "movie_id") VALUES (?, ?)[0m  [["user_id", 37], ["movie_id", 27]]
+  ↳ db/seeds.rb:21
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:21
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ db/seeds.rb:16
+  [1m[36mMovie Load (0.1ms)[0m  [1m[34mSELECT "movies".* FROM "movies"[0m
+  ↳ db/seeds.rb:17
+  [1m[36mMovie Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "movies" INNER JOIN "liked_movies" ON "movies"."id" = "liked_movies"."movie_id" WHERE "liked_movies"."user_id" = ? AND "movies"."id" = ? LIMIT ?[0m  [["user_id", 32], ["id", 24], ["LIMIT", 1]]
+  ↳ db/seeds.rb:18
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:21
+  [1m[36mLikedMovie Create (0.2ms)[0m  [1m[32mINSERT INTO "liked_movies" ("user_id", "movie_id") VALUES (?, ?)[0m  [["user_id", 32], ["movie_id", 24]]
+  ↳ db/seeds.rb:21
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:21
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ db/seeds.rb:16
+  [1m[36mMovie Load (0.1ms)[0m  [1m[34mSELECT "movies".* FROM "movies"[0m
+  ↳ db/seeds.rb:17
+  [1m[36mMovie Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "movies" INNER JOIN "liked_movies" ON "movies"."id" = "liked_movies"."movie_id" WHERE "liked_movies"."user_id" = ? AND "movies"."id" = ? LIMIT ?[0m  [["user_id", 50], ["id", 27], ["LIMIT", 1]]
+  ↳ db/seeds.rb:18
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:21
+  [1m[36mLikedMovie Create (0.2ms)[0m  [1m[32mINSERT INTO "liked_movies" ("user_id", "movie_id") VALUES (?, ?)[0m  [["user_id", 50], ["movie_id", 27]]
+  ↳ db/seeds.rb:21
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:21
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ db/seeds.rb:16
+  [1m[36mMovie Load (0.1ms)[0m  [1m[34mSELECT "movies".* FROM "movies"[0m
+  ↳ db/seeds.rb:17
+  [1m[36mMovie Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "movies" INNER JOIN "liked_movies" ON "movies"."id" = "liked_movies"."movie_id" WHERE "liked_movies"."user_id" = ? AND "movies"."id" = ? LIMIT ?[0m  [["user_id", 36], ["id", 18], ["LIMIT", 1]]
+  ↳ db/seeds.rb:18
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:21
+  [1m[36mLikedMovie Create (0.2ms)[0m  [1m[32mINSERT INTO "liked_movies" ("user_id", "movie_id") VALUES (?, ?)[0m  [["user_id", 36], ["movie_id", 18]]
+  ↳ db/seeds.rb:21
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:21
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ db/seeds.rb:16
+  [1m[36mMovie Load (0.1ms)[0m  [1m[34mSELECT "movies".* FROM "movies"[0m
+  ↳ db/seeds.rb:17
+  [1m[36mMovie Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "movies" INNER JOIN "liked_movies" ON "movies"."id" = "liked_movies"."movie_id" WHERE "liked_movies"."user_id" = ? AND "movies"."id" = ? LIMIT ?[0m  [["user_id", 37], ["id", 26], ["LIMIT", 1]]
+  ↳ db/seeds.rb:18
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:21
+  [1m[36mLikedMovie Create (0.2ms)[0m  [1m[32mINSERT INTO "liked_movies" ("user_id", "movie_id") VALUES (?, ?)[0m  [["user_id", 37], ["movie_id", 26]]
+  ↳ db/seeds.rb:21
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:21
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ db/seeds.rb:16
+  [1m[36mMovie Load (0.1ms)[0m  [1m[34mSELECT "movies".* FROM "movies"[0m
+  ↳ db/seeds.rb:17
+  [1m[36mMovie Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "movies" INNER JOIN "liked_movies" ON "movies"."id" = "liked_movies"."movie_id" WHERE "liked_movies"."user_id" = ? AND "movies"."id" = ? LIMIT ?[0m  [["user_id", 33], ["id", 21], ["LIMIT", 1]]
+  ↳ db/seeds.rb:18
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:21
+  [1m[36mLikedMovie Create (0.2ms)[0m  [1m[32mINSERT INTO "liked_movies" ("user_id", "movie_id") VALUES (?, ?)[0m  [["user_id", 33], ["movie_id", 21]]
+  ↳ db/seeds.rb:21
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:21
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ db/seeds.rb:16
+  [1m[36mMovie Load (0.1ms)[0m  [1m[34mSELECT "movies".* FROM "movies"[0m
+  ↳ db/seeds.rb:17
+  [1m[36mMovie Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "movies" INNER JOIN "liked_movies" ON "movies"."id" = "liked_movies"."movie_id" WHERE "liked_movies"."user_id" = ? AND "movies"."id" = ? LIMIT ?[0m  [["user_id", 33], ["id", 28], ["LIMIT", 1]]
+  ↳ db/seeds.rb:18
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:21
+  [1m[36mLikedMovie Create (0.2ms)[0m  [1m[32mINSERT INTO "liked_movies" ("user_id", "movie_id") VALUES (?, ?)[0m  [["user_id", 33], ["movie_id", 28]]
+  ↳ db/seeds.rb:21
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:21
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ db/seeds.rb:16
+  [1m[36mMovie Load (0.1ms)[0m  [1m[34mSELECT "movies".* FROM "movies"[0m
+  ↳ db/seeds.rb:17
+  [1m[36mMovie Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "movies" INNER JOIN "liked_movies" ON "movies"."id" = "liked_movies"."movie_id" WHERE "liked_movies"."user_id" = ? AND "movies"."id" = ? LIMIT ?[0m  [["user_id", 55], ["id", 27], ["LIMIT", 1]]
+  ↳ db/seeds.rb:18
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:21
+  [1m[36mLikedMovie Create (0.2ms)[0m  [1m[32mINSERT INTO "liked_movies" ("user_id", "movie_id") VALUES (?, ?)[0m  [["user_id", 55], ["movie_id", 27]]
+  ↳ db/seeds.rb:21
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:21
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ db/seeds.rb:16
+  [1m[36mMovie Load (0.1ms)[0m  [1m[34mSELECT "movies".* FROM "movies"[0m
+  ↳ db/seeds.rb:17
+  [1m[36mMovie Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "movies" INNER JOIN "liked_movies" ON "movies"."id" = "liked_movies"."movie_id" WHERE "liked_movies"."user_id" = ? AND "movies"."id" = ? LIMIT ?[0m  [["user_id", 40], ["id", 21], ["LIMIT", 1]]
+  ↳ db/seeds.rb:18
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ db/seeds.rb:16
+  [1m[36mMovie Load (0.1ms)[0m  [1m[34mSELECT "movies".* FROM "movies"[0m
+  ↳ db/seeds.rb:17
+  [1m[36mMovie Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "movies" INNER JOIN "liked_movies" ON "movies"."id" = "liked_movies"."movie_id" WHERE "liked_movies"."user_id" = ? AND "movies"."id" = ? LIMIT ?[0m  [["user_id", 37], ["id", 20], ["LIMIT", 1]]
+  ↳ db/seeds.rb:18
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:21
+  [1m[36mLikedMovie Create (0.2ms)[0m  [1m[32mINSERT INTO "liked_movies" ("user_id", "movie_id") VALUES (?, ?)[0m  [["user_id", 37], ["movie_id", 20]]
+  ↳ db/seeds.rb:21
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:21
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ db/seeds.rb:16
+  [1m[36mMovie Load (0.1ms)[0m  [1m[34mSELECT "movies".* FROM "movies"[0m
+  ↳ db/seeds.rb:17
+  [1m[36mMovie Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "movies" INNER JOIN "liked_movies" ON "movies"."id" = "liked_movies"."movie_id" WHERE "liked_movies"."user_id" = ? AND "movies"."id" = ? LIMIT ?[0m  [["user_id", 54], ["id", 18], ["LIMIT", 1]]
+  ↳ db/seeds.rb:18
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:21
+  [1m[36mLikedMovie Create (0.3ms)[0m  [1m[32mINSERT INTO "liked_movies" ("user_id", "movie_id") VALUES (?, ?)[0m  [["user_id", 54], ["movie_id", 18]]
+  ↳ db/seeds.rb:21
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:21
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ db/seeds.rb:16
+  [1m[36mMovie Load (0.1ms)[0m  [1m[34mSELECT "movies".* FROM "movies"[0m
+  ↳ db/seeds.rb:17
+  [1m[36mMovie Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "movies" INNER JOIN "liked_movies" ON "movies"."id" = "liked_movies"."movie_id" WHERE "liked_movies"."user_id" = ? AND "movies"."id" = ? LIMIT ?[0m  [["user_id", 53], ["id", 23], ["LIMIT", 1]]
+  ↳ db/seeds.rb:18
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:21
+  [1m[36mLikedMovie Create (0.2ms)[0m  [1m[32mINSERT INTO "liked_movies" ("user_id", "movie_id") VALUES (?, ?)[0m  [["user_id", 53], ["movie_id", 23]]
+  ↳ db/seeds.rb:21
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:21
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ db/seeds.rb:16
+  [1m[36mMovie Load (0.1ms)[0m  [1m[34mSELECT "movies".* FROM "movies"[0m
+  ↳ db/seeds.rb:17
+  [1m[36mMovie Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "movies" INNER JOIN "liked_movies" ON "movies"."id" = "liked_movies"."movie_id" WHERE "liked_movies"."user_id" = ? AND "movies"."id" = ? LIMIT ?[0m  [["user_id", 42], ["id", 16], ["LIMIT", 1]]
+  ↳ db/seeds.rb:18
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:21
+  [1m[36mLikedMovie Create (0.2ms)[0m  [1m[32mINSERT INTO "liked_movies" ("user_id", "movie_id") VALUES (?, ?)[0m  [["user_id", 42], ["movie_id", 16]]
+  ↳ db/seeds.rb:21
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:21
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ db/seeds.rb:16
+  [1m[36mMovie Load (0.1ms)[0m  [1m[34mSELECT "movies".* FROM "movies"[0m
+  ↳ db/seeds.rb:17
+  [1m[36mMovie Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "movies" INNER JOIN "liked_movies" ON "movies"."id" = "liked_movies"."movie_id" WHERE "liked_movies"."user_id" = ? AND "movies"."id" = ? LIMIT ?[0m  [["user_id", 52], ["id", 21], ["LIMIT", 1]]
+  ↳ db/seeds.rb:18
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:21
+  [1m[36mLikedMovie Create (0.2ms)[0m  [1m[32mINSERT INTO "liked_movies" ("user_id", "movie_id") VALUES (?, ?)[0m  [["user_id", 52], ["movie_id", 21]]
+  ↳ db/seeds.rb:21
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:21
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ db/seeds.rb:16
+  [1m[36mMovie Load (0.1ms)[0m  [1m[34mSELECT "movies".* FROM "movies"[0m
+  ↳ db/seeds.rb:17
+  [1m[36mMovie Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "movies" INNER JOIN "liked_movies" ON "movies"."id" = "liked_movies"."movie_id" WHERE "liked_movies"."user_id" = ? AND "movies"."id" = ? LIMIT ?[0m  [["user_id", 37], ["id", 30], ["LIMIT", 1]]
+  ↳ db/seeds.rb:18
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:21
+  [1m[36mLikedMovie Create (0.2ms)[0m  [1m[32mINSERT INTO "liked_movies" ("user_id", "movie_id") VALUES (?, ?)[0m  [["user_id", 37], ["movie_id", 30]]
+  ↳ db/seeds.rb:21
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:21
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ db/seeds.rb:16
+  [1m[36mMovie Load (0.1ms)[0m  [1m[34mSELECT "movies".* FROM "movies"[0m
+  ↳ db/seeds.rb:17
+  [1m[36mMovie Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "movies" INNER JOIN "liked_movies" ON "movies"."id" = "liked_movies"."movie_id" WHERE "liked_movies"."user_id" = ? AND "movies"."id" = ? LIMIT ?[0m  [["user_id", 59], ["id", 25], ["LIMIT", 1]]
+  ↳ db/seeds.rb:18
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:21
+  [1m[36mLikedMovie Create (0.2ms)[0m  [1m[32mINSERT INTO "liked_movies" ("user_id", "movie_id") VALUES (?, ?)[0m  [["user_id", 59], ["movie_id", 25]]
+  ↳ db/seeds.rb:21
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:21
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ db/seeds.rb:16
+  [1m[36mMovie Load (0.1ms)[0m  [1m[34mSELECT "movies".* FROM "movies"[0m
+  ↳ db/seeds.rb:17
+  [1m[36mMovie Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "movies" INNER JOIN "liked_movies" ON "movies"."id" = "liked_movies"."movie_id" WHERE "liked_movies"."user_id" = ? AND "movies"."id" = ? LIMIT ?[0m  [["user_id", 54], ["id", 16], ["LIMIT", 1]]
+  ↳ db/seeds.rb:18
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:21
+  [1m[36mLikedMovie Create (0.2ms)[0m  [1m[32mINSERT INTO "liked_movies" ("user_id", "movie_id") VALUES (?, ?)[0m  [["user_id", 54], ["movie_id", 16]]
+  ↳ db/seeds.rb:21
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:21
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ db/seeds.rb:16
+  [1m[36mMovie Load (0.1ms)[0m  [1m[34mSELECT "movies".* FROM "movies"[0m
+  ↳ db/seeds.rb:17
+  [1m[36mMovie Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "movies" INNER JOIN "liked_movies" ON "movies"."id" = "liked_movies"."movie_id" WHERE "liked_movies"."user_id" = ? AND "movies"."id" = ? LIMIT ?[0m  [["user_id", 39], ["id", 19], ["LIMIT", 1]]
+  ↳ db/seeds.rb:18
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:21
+  [1m[36mLikedMovie Create (0.2ms)[0m  [1m[32mINSERT INTO "liked_movies" ("user_id", "movie_id") VALUES (?, ?)[0m  [["user_id", 39], ["movie_id", 19]]
+  ↳ db/seeds.rb:21
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:21
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ db/seeds.rb:16
+  [1m[36mMovie Load (0.1ms)[0m  [1m[34mSELECT "movies".* FROM "movies"[0m
+  ↳ db/seeds.rb:17
+  [1m[36mMovie Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "movies" INNER JOIN "liked_movies" ON "movies"."id" = "liked_movies"."movie_id" WHERE "liked_movies"."user_id" = ? AND "movies"."id" = ? LIMIT ?[0m  [["user_id", 45], ["id", 22], ["LIMIT", 1]]
+  ↳ db/seeds.rb:18
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:21
+  [1m[36mLikedMovie Create (0.2ms)[0m  [1m[32mINSERT INTO "liked_movies" ("user_id", "movie_id") VALUES (?, ?)[0m  [["user_id", 45], ["movie_id", 22]]
+  ↳ db/seeds.rb:21
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:21
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ db/seeds.rb:16
+  [1m[36mMovie Load (0.1ms)[0m  [1m[34mSELECT "movies".* FROM "movies"[0m
+  ↳ db/seeds.rb:17
+  [1m[36mMovie Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "movies" INNER JOIN "liked_movies" ON "movies"."id" = "liked_movies"."movie_id" WHERE "liked_movies"."user_id" = ? AND "movies"."id" = ? LIMIT ?[0m  [["user_id", 57], ["id", 20], ["LIMIT", 1]]
+  ↳ db/seeds.rb:18
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:21
+  [1m[36mLikedMovie Create (0.2ms)[0m  [1m[32mINSERT INTO "liked_movies" ("user_id", "movie_id") VALUES (?, ?)[0m  [["user_id", 57], ["movie_id", 20]]
+  ↳ db/seeds.rb:21
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:21
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ db/seeds.rb:16
+  [1m[36mMovie Load (0.2ms)[0m  [1m[34mSELECT "movies".* FROM "movies"[0m
+  ↳ db/seeds.rb:17
+  [1m[36mMovie Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "movies" INNER JOIN "liked_movies" ON "movies"."id" = "liked_movies"."movie_id" WHERE "liked_movies"."user_id" = ? AND "movies"."id" = ? LIMIT ?[0m  [["user_id", 48], ["id", 22], ["LIMIT", 1]]
+  ↳ db/seeds.rb:18
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:21
+  [1m[36mLikedMovie Create (0.3ms)[0m  [1m[32mINSERT INTO "liked_movies" ("user_id", "movie_id") VALUES (?, ?)[0m  [["user_id", 48], ["movie_id", 22]]
+  ↳ db/seeds.rb:21
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:21
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ db/seeds.rb:16
+  [1m[36mMovie Load (0.1ms)[0m  [1m[34mSELECT "movies".* FROM "movies"[0m
+  ↳ db/seeds.rb:17
+  [1m[36mMovie Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "movies" INNER JOIN "liked_movies" ON "movies"."id" = "liked_movies"."movie_id" WHERE "liked_movies"."user_id" = ? AND "movies"."id" = ? LIMIT ?[0m  [["user_id", 42], ["id", 21], ["LIMIT", 1]]
+  ↳ db/seeds.rb:18
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:21
+  [1m[36mLikedMovie Create (0.2ms)[0m  [1m[32mINSERT INTO "liked_movies" ("user_id", "movie_id") VALUES (?, ?)[0m  [["user_id", 42], ["movie_id", 21]]
+  ↳ db/seeds.rb:21
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:21
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ db/seeds.rb:16
+  [1m[36mMovie Load (0.1ms)[0m  [1m[34mSELECT "movies".* FROM "movies"[0m
+  ↳ db/seeds.rb:17
+  [1m[36mMovie Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "movies" INNER JOIN "liked_movies" ON "movies"."id" = "liked_movies"."movie_id" WHERE "liked_movies"."user_id" = ? AND "movies"."id" = ? LIMIT ?[0m  [["user_id", 43], ["id", 22], ["LIMIT", 1]]
+  ↳ db/seeds.rb:18
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:21
+  [1m[36mLikedMovie Create (0.2ms)[0m  [1m[32mINSERT INTO "liked_movies" ("user_id", "movie_id") VALUES (?, ?)[0m  [["user_id", 43], ["movie_id", 22]]
+  ↳ db/seeds.rb:21
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:21
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ db/seeds.rb:16
+  [1m[36mMovie Load (0.1ms)[0m  [1m[34mSELECT "movies".* FROM "movies"[0m
+  ↳ db/seeds.rb:17
+  [1m[36mMovie Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "movies" INNER JOIN "liked_movies" ON "movies"."id" = "liked_movies"."movie_id" WHERE "liked_movies"."user_id" = ? AND "movies"."id" = ? LIMIT ?[0m  [["user_id", 34], ["id", 23], ["LIMIT", 1]]
+  ↳ db/seeds.rb:18
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:21
+  [1m[36mLikedMovie Create (0.2ms)[0m  [1m[32mINSERT INTO "liked_movies" ("user_id", "movie_id") VALUES (?, ?)[0m  [["user_id", 34], ["movie_id", 23]]
+  ↳ db/seeds.rb:21
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:21
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ db/seeds.rb:16
+  [1m[36mMovie Load (0.1ms)[0m  [1m[34mSELECT "movies".* FROM "movies"[0m
+  ↳ db/seeds.rb:17
+  [1m[36mMovie Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "movies" INNER JOIN "liked_movies" ON "movies"."id" = "liked_movies"."movie_id" WHERE "liked_movies"."user_id" = ? AND "movies"."id" = ? LIMIT ?[0m  [["user_id", 44], ["id", 16], ["LIMIT", 1]]
+  ↳ db/seeds.rb:18
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:21
+  [1m[36mLikedMovie Create (0.2ms)[0m  [1m[32mINSERT INTO "liked_movies" ("user_id", "movie_id") VALUES (?, ?)[0m  [["user_id", 44], ["movie_id", 16]]
+  ↳ db/seeds.rb:21
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:21
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ db/seeds.rb:16
+  [1m[36mMovie Load (0.1ms)[0m  [1m[34mSELECT "movies".* FROM "movies"[0m
+  ↳ db/seeds.rb:17
+  [1m[36mMovie Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "movies" INNER JOIN "liked_movies" ON "movies"."id" = "liked_movies"."movie_id" WHERE "liked_movies"."user_id" = ? AND "movies"."id" = ? LIMIT ?[0m  [["user_id", 32], ["id", 20], ["LIMIT", 1]]
+  ↳ db/seeds.rb:18
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:21
+  [1m[36mLikedMovie Create (0.2ms)[0m  [1m[32mINSERT INTO "liked_movies" ("user_id", "movie_id") VALUES (?, ?)[0m  [["user_id", 32], ["movie_id", 20]]
+  ↳ db/seeds.rb:21
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:21
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ db/seeds.rb:16
+  [1m[36mMovie Load (0.1ms)[0m  [1m[34mSELECT "movies".* FROM "movies"[0m
+  ↳ db/seeds.rb:17
+  [1m[36mMovie Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "movies" INNER JOIN "liked_movies" ON "movies"."id" = "liked_movies"."movie_id" WHERE "liked_movies"."user_id" = ? AND "movies"."id" = ? LIMIT ?[0m  [["user_id", 36], ["id", 24], ["LIMIT", 1]]
+  ↳ db/seeds.rb:18
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:21
+  [1m[36mLikedMovie Create (0.2ms)[0m  [1m[32mINSERT INTO "liked_movies" ("user_id", "movie_id") VALUES (?, ?)[0m  [["user_id", 36], ["movie_id", 24]]
+  ↳ db/seeds.rb:21
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:21
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ db/seeds.rb:16
+  [1m[36mMovie Load (0.1ms)[0m  [1m[34mSELECT "movies".* FROM "movies"[0m
+  ↳ db/seeds.rb:17
+  [1m[36mMovie Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "movies" INNER JOIN "liked_movies" ON "movies"."id" = "liked_movies"."movie_id" WHERE "liked_movies"."user_id" = ? AND "movies"."id" = ? LIMIT ?[0m  [["user_id", 45], ["id", 29], ["LIMIT", 1]]
+  ↳ db/seeds.rb:18
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:21
+  [1m[36mLikedMovie Create (0.2ms)[0m  [1m[32mINSERT INTO "liked_movies" ("user_id", "movie_id") VALUES (?, ?)[0m  [["user_id", 45], ["movie_id", 29]]
+  ↳ db/seeds.rb:21
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:21
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ db/seeds.rb:16
+  [1m[36mMovie Load (0.1ms)[0m  [1m[34mSELECT "movies".* FROM "movies"[0m
+  ↳ db/seeds.rb:17
+  [1m[36mMovie Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "movies" INNER JOIN "liked_movies" ON "movies"."id" = "liked_movies"."movie_id" WHERE "liked_movies"."user_id" = ? AND "movies"."id" = ? LIMIT ?[0m  [["user_id", 34], ["id", 19], ["LIMIT", 1]]
+  ↳ db/seeds.rb:18
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:21
+  [1m[36mLikedMovie Create (0.2ms)[0m  [1m[32mINSERT INTO "liked_movies" ("user_id", "movie_id") VALUES (?, ?)[0m  [["user_id", 34], ["movie_id", 19]]
+  ↳ db/seeds.rb:21
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:21
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ db/seeds.rb:16
+  [1m[36mMovie Load (0.1ms)[0m  [1m[34mSELECT "movies".* FROM "movies"[0m
+  ↳ db/seeds.rb:17
+  [1m[36mMovie Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "movies" INNER JOIN "liked_movies" ON "movies"."id" = "liked_movies"."movie_id" WHERE "liked_movies"."user_id" = ? AND "movies"."id" = ? LIMIT ?[0m  [["user_id", 57], ["id", 16], ["LIMIT", 1]]
+  ↳ db/seeds.rb:18
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:21
+  [1m[36mLikedMovie Create (0.2ms)[0m  [1m[32mINSERT INTO "liked_movies" ("user_id", "movie_id") VALUES (?, ?)[0m  [["user_id", 57], ["movie_id", 16]]
+  ↳ db/seeds.rb:21
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:21
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ db/seeds.rb:16
+  [1m[36mMovie Load (0.1ms)[0m  [1m[34mSELECT "movies".* FROM "movies"[0m
+  ↳ db/seeds.rb:17
+  [1m[36mMovie Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "movies" INNER JOIN "liked_movies" ON "movies"."id" = "liked_movies"."movie_id" WHERE "liked_movies"."user_id" = ? AND "movies"."id" = ? LIMIT ?[0m  [["user_id", 59], ["id", 24], ["LIMIT", 1]]
+  ↳ db/seeds.rb:18
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:21
+  [1m[36mLikedMovie Create (0.3ms)[0m  [1m[32mINSERT INTO "liked_movies" ("user_id", "movie_id") VALUES (?, ?)[0m  [["user_id", 59], ["movie_id", 24]]
+  ↳ db/seeds.rb:21
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:21
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ db/seeds.rb:16
+  [1m[36mMovie Load (0.1ms)[0m  [1m[34mSELECT "movies".* FROM "movies"[0m
+  ↳ db/seeds.rb:17
+  [1m[36mMovie Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "movies" INNER JOIN "liked_movies" ON "movies"."id" = "liked_movies"."movie_id" WHERE "liked_movies"."user_id" = ? AND "movies"."id" = ? LIMIT ?[0m  [["user_id", 60], ["id", 23], ["LIMIT", 1]]
+  ↳ db/seeds.rb:18
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:21
+  [1m[36mLikedMovie Create (0.2ms)[0m  [1m[32mINSERT INTO "liked_movies" ("user_id", "movie_id") VALUES (?, ?)[0m  [["user_id", 60], ["movie_id", 23]]
+  ↳ db/seeds.rb:21
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:21
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ db/seeds.rb:16
+  [1m[36mMovie Load (0.1ms)[0m  [1m[34mSELECT "movies".* FROM "movies"[0m
+  ↳ db/seeds.rb:17
+  [1m[36mMovie Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "movies" INNER JOIN "liked_movies" ON "movies"."id" = "liked_movies"."movie_id" WHERE "liked_movies"."user_id" = ? AND "movies"."id" = ? LIMIT ?[0m  [["user_id", 45], ["id", 25], ["LIMIT", 1]]
+  ↳ db/seeds.rb:18
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:21
+  [1m[36mLikedMovie Create (0.2ms)[0m  [1m[32mINSERT INTO "liked_movies" ("user_id", "movie_id") VALUES (?, ?)[0m  [["user_id", 45], ["movie_id", 25]]
+  ↳ db/seeds.rb:21
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:21
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ db/seeds.rb:16
+  [1m[36mMovie Load (0.1ms)[0m  [1m[34mSELECT "movies".* FROM "movies"[0m
+  ↳ db/seeds.rb:17
+  [1m[36mMovie Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "movies" INNER JOIN "liked_movies" ON "movies"."id" = "liked_movies"."movie_id" WHERE "liked_movies"."user_id" = ? AND "movies"."id" = ? LIMIT ?[0m  [["user_id", 41], ["id", 19], ["LIMIT", 1]]
+  ↳ db/seeds.rb:18
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:21
+  [1m[36mLikedMovie Create (0.3ms)[0m  [1m[32mINSERT INTO "liked_movies" ("user_id", "movie_id") VALUES (?, ?)[0m  [["user_id", 41], ["movie_id", 19]]
+  ↳ db/seeds.rb:21
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:21
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ db/seeds.rb:16
+  [1m[36mMovie Load (0.1ms)[0m  [1m[34mSELECT "movies".* FROM "movies"[0m
+  ↳ db/seeds.rb:17
+  [1m[36mMovie Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "movies" INNER JOIN "liked_movies" ON "movies"."id" = "liked_movies"."movie_id" WHERE "liked_movies"."user_id" = ? AND "movies"."id" = ? LIMIT ?[0m  [["user_id", 35], ["id", 28], ["LIMIT", 1]]
+  ↳ db/seeds.rb:18
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:21
+  [1m[36mLikedMovie Create (0.2ms)[0m  [1m[32mINSERT INTO "liked_movies" ("user_id", "movie_id") VALUES (?, ?)[0m  [["user_id", 35], ["movie_id", 28]]
+  ↳ db/seeds.rb:21
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:21
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ db/seeds.rb:16
+  [1m[36mMovie Load (0.1ms)[0m  [1m[34mSELECT "movies".* FROM "movies"[0m
+  ↳ db/seeds.rb:17
+  [1m[36mMovie Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "movies" INNER JOIN "liked_movies" ON "movies"."id" = "liked_movies"."movie_id" WHERE "liked_movies"."user_id" = ? AND "movies"."id" = ? LIMIT ?[0m  [["user_id", 58], ["id", 18], ["LIMIT", 1]]
+  ↳ db/seeds.rb:18
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:21
+  [1m[36mLikedMovie Create (0.2ms)[0m  [1m[32mINSERT INTO "liked_movies" ("user_id", "movie_id") VALUES (?, ?)[0m  [["user_id", 58], ["movie_id", 18]]
+  ↳ db/seeds.rb:21
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:21
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ db/seeds.rb:16
+  [1m[36mMovie Load (0.1ms)[0m  [1m[34mSELECT "movies".* FROM "movies"[0m
+  ↳ db/seeds.rb:17
+  [1m[36mMovie Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "movies" INNER JOIN "liked_movies" ON "movies"."id" = "liked_movies"."movie_id" WHERE "liked_movies"."user_id" = ? AND "movies"."id" = ? LIMIT ?[0m  [["user_id", 54], ["id", 28], ["LIMIT", 1]]
+  ↳ db/seeds.rb:18
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:21
+  [1m[36mLikedMovie Create (0.2ms)[0m  [1m[32mINSERT INTO "liked_movies" ("user_id", "movie_id") VALUES (?, ?)[0m  [["user_id", 54], ["movie_id", 28]]
+  ↳ db/seeds.rb:21
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:21
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ db/seeds.rb:16
+  [1m[36mMovie Load (0.1ms)[0m  [1m[34mSELECT "movies".* FROM "movies"[0m
+  ↳ db/seeds.rb:17
+  [1m[36mMovie Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "movies" INNER JOIN "liked_movies" ON "movies"."id" = "liked_movies"."movie_id" WHERE "liked_movies"."user_id" = ? AND "movies"."id" = ? LIMIT ?[0m  [["user_id", 39], ["id", 20], ["LIMIT", 1]]
+  ↳ db/seeds.rb:18
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:21
+  [1m[36mLikedMovie Create (0.3ms)[0m  [1m[32mINSERT INTO "liked_movies" ("user_id", "movie_id") VALUES (?, ?)[0m  [["user_id", 39], ["movie_id", 20]]
+  ↳ db/seeds.rb:21
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:21
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ db/seeds.rb:16
+  [1m[36mMovie Load (0.1ms)[0m  [1m[34mSELECT "movies".* FROM "movies"[0m
+  ↳ db/seeds.rb:17
+  [1m[36mMovie Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "movies" INNER JOIN "liked_movies" ON "movies"."id" = "liked_movies"."movie_id" WHERE "liked_movies"."user_id" = ? AND "movies"."id" = ? LIMIT ?[0m  [["user_id", 53], ["id", 26], ["LIMIT", 1]]
+  ↳ db/seeds.rb:18
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ db/seeds.rb:16
+  [1m[36mMovie Load (0.1ms)[0m  [1m[34mSELECT "movies".* FROM "movies"[0m
+  ↳ db/seeds.rb:17
+  [1m[36mMovie Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "movies" INNER JOIN "liked_movies" ON "movies"."id" = "liked_movies"."movie_id" WHERE "liked_movies"."user_id" = ? AND "movies"."id" = ? LIMIT ?[0m  [["user_id", 48], ["id", 27], ["LIMIT", 1]]
+  ↳ db/seeds.rb:18
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:21
+  [1m[36mLikedMovie Create (0.2ms)[0m  [1m[32mINSERT INTO "liked_movies" ("user_id", "movie_id") VALUES (?, ?)[0m  [["user_id", 48], ["movie_id", 27]]
+  ↳ db/seeds.rb:21
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:21
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ db/seeds.rb:16
+  [1m[36mMovie Load (0.1ms)[0m  [1m[34mSELECT "movies".* FROM "movies"[0m
+  ↳ db/seeds.rb:17
+  [1m[36mMovie Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "movies" INNER JOIN "liked_movies" ON "movies"."id" = "liked_movies"."movie_id" WHERE "liked_movies"."user_id" = ? AND "movies"."id" = ? LIMIT ?[0m  [["user_id", 36], ["id", 21], ["LIMIT", 1]]
+  ↳ db/seeds.rb:18
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:21
+  [1m[36mLikedMovie Create (0.3ms)[0m  [1m[32mINSERT INTO "liked_movies" ("user_id", "movie_id") VALUES (?, ?)[0m  [["user_id", 36], ["movie_id", 21]]
+  ↳ db/seeds.rb:21
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:21
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ db/seeds.rb:16
+  [1m[36mMovie Load (0.1ms)[0m  [1m[34mSELECT "movies".* FROM "movies"[0m
+  ↳ db/seeds.rb:17
+  [1m[36mMovie Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "movies" INNER JOIN "liked_movies" ON "movies"."id" = "liked_movies"."movie_id" WHERE "liked_movies"."user_id" = ? AND "movies"."id" = ? LIMIT ?[0m  [["user_id", 51], ["id", 25], ["LIMIT", 1]]
+  ↳ db/seeds.rb:18
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:21
+  [1m[36mLikedMovie Create (0.2ms)[0m  [1m[32mINSERT INTO "liked_movies" ("user_id", "movie_id") VALUES (?, ?)[0m  [["user_id", 51], ["movie_id", 25]]
+  ↳ db/seeds.rb:21
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:21
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ db/seeds.rb:16
+  [1m[36mMovie Load (0.1ms)[0m  [1m[34mSELECT "movies".* FROM "movies"[0m
+  ↳ db/seeds.rb:17
+  [1m[36mMovie Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "movies" INNER JOIN "liked_movies" ON "movies"."id" = "liked_movies"."movie_id" WHERE "liked_movies"."user_id" = ? AND "movies"."id" = ? LIMIT ?[0m  [["user_id", 34], ["id", 18], ["LIMIT", 1]]
+  ↳ db/seeds.rb:18
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:21
+  [1m[36mLikedMovie Create (0.2ms)[0m  [1m[32mINSERT INTO "liked_movies" ("user_id", "movie_id") VALUES (?, ?)[0m  [["user_id", 34], ["movie_id", 18]]
+  ↳ db/seeds.rb:21
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:21
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ db/seeds.rb:16
+  [1m[36mMovie Load (0.1ms)[0m  [1m[34mSELECT "movies".* FROM "movies"[0m
+  ↳ db/seeds.rb:17
+  [1m[36mMovie Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "movies" INNER JOIN "liked_movies" ON "movies"."id" = "liked_movies"."movie_id" WHERE "liked_movies"."user_id" = ? AND "movies"."id" = ? LIMIT ?[0m  [["user_id", 32], ["id", 23], ["LIMIT", 1]]
+  ↳ db/seeds.rb:18
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:21
+  [1m[36mLikedMovie Create (0.2ms)[0m  [1m[32mINSERT INTO "liked_movies" ("user_id", "movie_id") VALUES (?, ?)[0m  [["user_id", 32], ["movie_id", 23]]
+  ↳ db/seeds.rb:21
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:21
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ db/seeds.rb:16
+  [1m[36mMovie Load (0.1ms)[0m  [1m[34mSELECT "movies".* FROM "movies"[0m
+  ↳ db/seeds.rb:17
+  [1m[36mMovie Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "movies" INNER JOIN "liked_movies" ON "movies"."id" = "liked_movies"."movie_id" WHERE "liked_movies"."user_id" = ? AND "movies"."id" = ? LIMIT ?[0m  [["user_id", 52], ["id", 24], ["LIMIT", 1]]
+  ↳ db/seeds.rb:18
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:21
+  [1m[36mLikedMovie Create (0.2ms)[0m  [1m[32mINSERT INTO "liked_movies" ("user_id", "movie_id") VALUES (?, ?)[0m  [["user_id", 52], ["movie_id", 24]]
+  ↳ db/seeds.rb:21
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:21
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ db/seeds.rb:16
+  [1m[36mMovie Load (0.1ms)[0m  [1m[34mSELECT "movies".* FROM "movies"[0m
+  ↳ db/seeds.rb:17
+  [1m[36mMovie Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "movies" INNER JOIN "liked_movies" ON "movies"."id" = "liked_movies"."movie_id" WHERE "liked_movies"."user_id" = ? AND "movies"."id" = ? LIMIT ?[0m  [["user_id", 42], ["id", 21], ["LIMIT", 1]]
+  ↳ db/seeds.rb:18
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ db/seeds.rb:16
+  [1m[36mMovie Load (0.1ms)[0m  [1m[34mSELECT "movies".* FROM "movies"[0m
+  ↳ db/seeds.rb:17
+  [1m[36mMovie Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "movies" INNER JOIN "liked_movies" ON "movies"."id" = "liked_movies"."movie_id" WHERE "liked_movies"."user_id" = ? AND "movies"."id" = ? LIMIT ?[0m  [["user_id", 57], ["id", 20], ["LIMIT", 1]]
+  ↳ db/seeds.rb:18
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ db/seeds.rb:16
+  [1m[36mMovie Load (0.1ms)[0m  [1m[34mSELECT "movies".* FROM "movies"[0m
+  ↳ db/seeds.rb:17
+  [1m[36mMovie Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "movies" INNER JOIN "liked_movies" ON "movies"."id" = "liked_movies"."movie_id" WHERE "liked_movies"."user_id" = ? AND "movies"."id" = ? LIMIT ?[0m  [["user_id", 35], ["id", 26], ["LIMIT", 1]]
+  ↳ db/seeds.rb:18
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:21
+  [1m[36mLikedMovie Create (0.2ms)[0m  [1m[32mINSERT INTO "liked_movies" ("user_id", "movie_id") VALUES (?, ?)[0m  [["user_id", 35], ["movie_id", 26]]
+  ↳ db/seeds.rb:21
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:21
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ db/seeds.rb:16
+  [1m[36mMovie Load (0.1ms)[0m  [1m[34mSELECT "movies".* FROM "movies"[0m
+  ↳ db/seeds.rb:17
+  [1m[36mMovie Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "movies" INNER JOIN "liked_movies" ON "movies"."id" = "liked_movies"."movie_id" WHERE "liked_movies"."user_id" = ? AND "movies"."id" = ? LIMIT ?[0m  [["user_id", 56], ["id", 19], ["LIMIT", 1]]
+  ↳ db/seeds.rb:18
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:21
+  [1m[36mLikedMovie Create (0.2ms)[0m  [1m[32mINSERT INTO "liked_movies" ("user_id", "movie_id") VALUES (?, ?)[0m  [["user_id", 56], ["movie_id", 19]]
+  ↳ db/seeds.rb:21
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:21
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ db/seeds.rb:16
+  [1m[36mMovie Load (0.1ms)[0m  [1m[34mSELECT "movies".* FROM "movies"[0m
+  ↳ db/seeds.rb:17
+  [1m[36mMovie Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "movies" INNER JOIN "liked_movies" ON "movies"."id" = "liked_movies"."movie_id" WHERE "liked_movies"."user_id" = ? AND "movies"."id" = ? LIMIT ?[0m  [["user_id", 36], ["id", 23], ["LIMIT", 1]]
+  ↳ db/seeds.rb:18
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:21
+  [1m[36mLikedMovie Create (0.2ms)[0m  [1m[32mINSERT INTO "liked_movies" ("user_id", "movie_id") VALUES (?, ?)[0m  [["user_id", 36], ["movie_id", 23]]
+  ↳ db/seeds.rb:21
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:21
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ db/seeds.rb:16
+  [1m[36mMovie Load (0.1ms)[0m  [1m[34mSELECT "movies".* FROM "movies"[0m
+  ↳ db/seeds.rb:17
+  [1m[36mMovie Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "movies" INNER JOIN "liked_movies" ON "movies"."id" = "liked_movies"."movie_id" WHERE "liked_movies"."user_id" = ? AND "movies"."id" = ? LIMIT ?[0m  [["user_id", 57], ["id", 23], ["LIMIT", 1]]
+  ↳ db/seeds.rb:18
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:21
+  [1m[36mLikedMovie Create (0.2ms)[0m  [1m[32mINSERT INTO "liked_movies" ("user_id", "movie_id") VALUES (?, ?)[0m  [["user_id", 57], ["movie_id", 23]]
+  ↳ db/seeds.rb:21
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:21
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ db/seeds.rb:16
+  [1m[36mMovie Load (0.1ms)[0m  [1m[34mSELECT "movies".* FROM "movies"[0m
+  ↳ db/seeds.rb:17
+  [1m[36mMovie Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "movies" INNER JOIN "liked_movies" ON "movies"."id" = "liked_movies"."movie_id" WHERE "liked_movies"."user_id" = ? AND "movies"."id" = ? LIMIT ?[0m  [["user_id", 32], ["id", 17], ["LIMIT", 1]]
+  ↳ db/seeds.rb:18
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ db/seeds.rb:16
+  [1m[36mMovie Load (0.1ms)[0m  [1m[34mSELECT "movies".* FROM "movies"[0m
+  ↳ db/seeds.rb:17
+  [1m[36mMovie Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "movies" INNER JOIN "liked_movies" ON "movies"."id" = "liked_movies"."movie_id" WHERE "liked_movies"."user_id" = ? AND "movies"."id" = ? LIMIT ?[0m  [["user_id", 55], ["id", 19], ["LIMIT", 1]]
+  ↳ db/seeds.rb:18
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:21
+  [1m[36mLikedMovie Create (0.3ms)[0m  [1m[32mINSERT INTO "liked_movies" ("user_id", "movie_id") VALUES (?, ?)[0m  [["user_id", 55], ["movie_id", 19]]
+  ↳ db/seeds.rb:21
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:21
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ db/seeds.rb:16
+  [1m[36mMovie Load (0.1ms)[0m  [1m[34mSELECT "movies".* FROM "movies"[0m
+  ↳ db/seeds.rb:17
+  [1m[36mMovie Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "movies" INNER JOIN "liked_movies" ON "movies"."id" = "liked_movies"."movie_id" WHERE "liked_movies"."user_id" = ? AND "movies"."id" = ? LIMIT ?[0m  [["user_id", 46], ["id", 17], ["LIMIT", 1]]
+  ↳ db/seeds.rb:18
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:21
+  [1m[36mLikedMovie Create (0.2ms)[0m  [1m[32mINSERT INTO "liked_movies" ("user_id", "movie_id") VALUES (?, ?)[0m  [["user_id", 46], ["movie_id", 17]]
+  ↳ db/seeds.rb:21
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:21
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ db/seeds.rb:16
+  [1m[36mMovie Load (0.1ms)[0m  [1m[34mSELECT "movies".* FROM "movies"[0m
+  ↳ db/seeds.rb:17
+  [1m[36mMovie Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "movies" INNER JOIN "liked_movies" ON "movies"."id" = "liked_movies"."movie_id" WHERE "liked_movies"."user_id" = ? AND "movies"."id" = ? LIMIT ?[0m  [["user_id", 47], ["id", 19], ["LIMIT", 1]]
+  ↳ db/seeds.rb:18
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:21
+  [1m[36mLikedMovie Create (0.2ms)[0m  [1m[32mINSERT INTO "liked_movies" ("user_id", "movie_id") VALUES (?, ?)[0m  [["user_id", 47], ["movie_id", 19]]
+  ↳ db/seeds.rb:21
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:21
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ db/seeds.rb:16
+  [1m[36mMovie Load (0.1ms)[0m  [1m[34mSELECT "movies".* FROM "movies"[0m
+  ↳ db/seeds.rb:17
+  [1m[36mMovie Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "movies" INNER JOIN "liked_movies" ON "movies"."id" = "liked_movies"."movie_id" WHERE "liked_movies"."user_id" = ? AND "movies"."id" = ? LIMIT ?[0m  [["user_id", 33], ["id", 18], ["LIMIT", 1]]
+  ↳ db/seeds.rb:18
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:21
+  [1m[36mLikedMovie Create (0.2ms)[0m  [1m[32mINSERT INTO "liked_movies" ("user_id", "movie_id") VALUES (?, ?)[0m  [["user_id", 33], ["movie_id", 18]]
+  ↳ db/seeds.rb:21
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:21
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ db/seeds.rb:16
+  [1m[36mMovie Load (0.1ms)[0m  [1m[34mSELECT "movies".* FROM "movies"[0m
+  ↳ db/seeds.rb:17
+  [1m[36mMovie Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "movies" INNER JOIN "liked_movies" ON "movies"."id" = "liked_movies"."movie_id" WHERE "liked_movies"."user_id" = ? AND "movies"."id" = ? LIMIT ?[0m  [["user_id", 58], ["id", 19], ["LIMIT", 1]]
+  ↳ db/seeds.rb:18
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:21
+  [1m[36mLikedMovie Create (0.2ms)[0m  [1m[32mINSERT INTO "liked_movies" ("user_id", "movie_id") VALUES (?, ?)[0m  [["user_id", 58], ["movie_id", 19]]
+  ↳ db/seeds.rb:21
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:21
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ db/seeds.rb:16
+  [1m[36mMovie Load (0.1ms)[0m  [1m[34mSELECT "movies".* FROM "movies"[0m
+  ↳ db/seeds.rb:17
+  [1m[36mMovie Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "movies" INNER JOIN "liked_movies" ON "movies"."id" = "liked_movies"."movie_id" WHERE "liked_movies"."user_id" = ? AND "movies"."id" = ? LIMIT ?[0m  [["user_id", 48], ["id", 26], ["LIMIT", 1]]
+  ↳ db/seeds.rb:18
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:21
+  [1m[36mLikedMovie Create (0.2ms)[0m  [1m[32mINSERT INTO "liked_movies" ("user_id", "movie_id") VALUES (?, ?)[0m  [["user_id", 48], ["movie_id", 26]]
+  ↳ db/seeds.rb:21
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:21
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ db/seeds.rb:16
+  [1m[36mMovie Load (0.1ms)[0m  [1m[34mSELECT "movies".* FROM "movies"[0m
+  ↳ db/seeds.rb:17
+  [1m[36mMovie Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "movies" INNER JOIN "liked_movies" ON "movies"."id" = "liked_movies"."movie_id" WHERE "liked_movies"."user_id" = ? AND "movies"."id" = ? LIMIT ?[0m  [["user_id", 40], ["id", 30], ["LIMIT", 1]]
+  ↳ db/seeds.rb:18
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:21
+  [1m[36mLikedMovie Create (0.2ms)[0m  [1m[32mINSERT INTO "liked_movies" ("user_id", "movie_id") VALUES (?, ?)[0m  [["user_id", 40], ["movie_id", 30]]
+  ↳ db/seeds.rb:21
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:21
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ db/seeds.rb:16
+  [1m[36mMovie Load (0.1ms)[0m  [1m[34mSELECT "movies".* FROM "movies"[0m
+  ↳ db/seeds.rb:17
+  [1m[36mMovie Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "movies" INNER JOIN "liked_movies" ON "movies"."id" = "liked_movies"."movie_id" WHERE "liked_movies"."user_id" = ? AND "movies"."id" = ? LIMIT ?[0m  [["user_id", 35], ["id", 22], ["LIMIT", 1]]
+  ↳ db/seeds.rb:18
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:21
+  [1m[36mLikedMovie Create (0.2ms)[0m  [1m[32mINSERT INTO "liked_movies" ("user_id", "movie_id") VALUES (?, ?)[0m  [["user_id", 35], ["movie_id", 22]]
+  ↳ db/seeds.rb:21
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:21
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ db/seeds.rb:16
+  [1m[36mMovie Load (0.1ms)[0m  [1m[34mSELECT "movies".* FROM "movies"[0m
+  ↳ db/seeds.rb:17
+  [1m[36mMovie Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "movies" INNER JOIN "liked_movies" ON "movies"."id" = "liked_movies"."movie_id" WHERE "liked_movies"."user_id" = ? AND "movies"."id" = ? LIMIT ?[0m  [["user_id", 47], ["id", 21], ["LIMIT", 1]]
+  ↳ db/seeds.rb:18
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:21
+  [1m[36mLikedMovie Create (0.2ms)[0m  [1m[32mINSERT INTO "liked_movies" ("user_id", "movie_id") VALUES (?, ?)[0m  [["user_id", 47], ["movie_id", 21]]
+  ↳ db/seeds.rb:21
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:21
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ db/seeds.rb:16
+  [1m[36mMovie Load (0.1ms)[0m  [1m[34mSELECT "movies".* FROM "movies"[0m
+  ↳ db/seeds.rb:17
+  [1m[36mMovie Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "movies" INNER JOIN "liked_movies" ON "movies"."id" = "liked_movies"."movie_id" WHERE "liked_movies"."user_id" = ? AND "movies"."id" = ? LIMIT ?[0m  [["user_id", 36], ["id", 21], ["LIMIT", 1]]
+  ↳ db/seeds.rb:18
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ db/seeds.rb:16
+  [1m[36mMovie Load (0.2ms)[0m  [1m[34mSELECT "movies".* FROM "movies"[0m
+  ↳ db/seeds.rb:17
+  [1m[36mMovie Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "movies" INNER JOIN "liked_movies" ON "movies"."id" = "liked_movies"."movie_id" WHERE "liked_movies"."user_id" = ? AND "movies"."id" = ? LIMIT ?[0m  [["user_id", 33], ["id", 25], ["LIMIT", 1]]
+  ↳ db/seeds.rb:18
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:21
+  [1m[36mLikedMovie Create (0.3ms)[0m  [1m[32mINSERT INTO "liked_movies" ("user_id", "movie_id") VALUES (?, ?)[0m  [["user_id", 33], ["movie_id", 25]]
+  ↳ db/seeds.rb:21
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:21
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ db/seeds.rb:16
+  [1m[36mMovie Load (0.1ms)[0m  [1m[34mSELECT "movies".* FROM "movies"[0m
+  ↳ db/seeds.rb:17
+  [1m[36mMovie Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "movies" INNER JOIN "liked_movies" ON "movies"."id" = "liked_movies"."movie_id" WHERE "liked_movies"."user_id" = ? AND "movies"."id" = ? LIMIT ?[0m  [["user_id", 32], ["id", 30], ["LIMIT", 1]]
+  ↳ db/seeds.rb:18
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:21
+  [1m[36mLikedMovie Create (0.2ms)[0m  [1m[32mINSERT INTO "liked_movies" ("user_id", "movie_id") VALUES (?, ?)[0m  [["user_id", 32], ["movie_id", 30]]
+  ↳ db/seeds.rb:21
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:21
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ db/seeds.rb:16
+  [1m[36mMovie Load (0.1ms)[0m  [1m[34mSELECT "movies".* FROM "movies"[0m
+  ↳ db/seeds.rb:17
+  [1m[36mMovie Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "movies" INNER JOIN "liked_movies" ON "movies"."id" = "liked_movies"."movie_id" WHERE "liked_movies"."user_id" = ? AND "movies"."id" = ? LIMIT ?[0m  [["user_id", 44], ["id", 23], ["LIMIT", 1]]
+  ↳ db/seeds.rb:18
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:21
+  [1m[36mLikedMovie Create (0.2ms)[0m  [1m[32mINSERT INTO "liked_movies" ("user_id", "movie_id") VALUES (?, ?)[0m  [["user_id", 44], ["movie_id", 23]]
+  ↳ db/seeds.rb:21
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:21
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ db/seeds.rb:16
+  [1m[36mMovie Load (0.1ms)[0m  [1m[34mSELECT "movies".* FROM "movies"[0m
+  ↳ db/seeds.rb:17
+  [1m[36mMovie Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "movies" INNER JOIN "liked_movies" ON "movies"."id" = "liked_movies"."movie_id" WHERE "liked_movies"."user_id" = ? AND "movies"."id" = ? LIMIT ?[0m  [["user_id", 43], ["id", 22], ["LIMIT", 1]]
+  ↳ db/seeds.rb:18
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ db/seeds.rb:16
+  [1m[36mMovie Load (0.1ms)[0m  [1m[34mSELECT "movies".* FROM "movies"[0m
+  ↳ db/seeds.rb:17
+  [1m[36mMovie Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "movies" INNER JOIN "liked_movies" ON "movies"."id" = "liked_movies"."movie_id" WHERE "liked_movies"."user_id" = ? AND "movies"."id" = ? LIMIT ?[0m  [["user_id", 35], ["id", 30], ["LIMIT", 1]]
+  ↳ db/seeds.rb:18
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:21
+  [1m[36mLikedMovie Create (0.2ms)[0m  [1m[32mINSERT INTO "liked_movies" ("user_id", "movie_id") VALUES (?, ?)[0m  [["user_id", 35], ["movie_id", 30]]
+  ↳ db/seeds.rb:21
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:21
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ db/seeds.rb:16
+  [1m[36mMovie Load (0.1ms)[0m  [1m[34mSELECT "movies".* FROM "movies"[0m
+  ↳ db/seeds.rb:17
+  [1m[36mMovie Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "movies" INNER JOIN "liked_movies" ON "movies"."id" = "liked_movies"."movie_id" WHERE "liked_movies"."user_id" = ? AND "movies"."id" = ? LIMIT ?[0m  [["user_id", 39], ["id", 29], ["LIMIT", 1]]
+  ↳ db/seeds.rb:18
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:21
+  [1m[36mLikedMovie Create (0.2ms)[0m  [1m[32mINSERT INTO "liked_movies" ("user_id", "movie_id") VALUES (?, ?)[0m  [["user_id", 39], ["movie_id", 29]]
+  ↳ db/seeds.rb:21
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:21
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ db/seeds.rb:16
+  [1m[36mMovie Load (0.1ms)[0m  [1m[34mSELECT "movies".* FROM "movies"[0m
+  ↳ db/seeds.rb:17
+  [1m[36mMovie Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "movies" INNER JOIN "liked_movies" ON "movies"."id" = "liked_movies"."movie_id" WHERE "liked_movies"."user_id" = ? AND "movies"."id" = ? LIMIT ?[0m  [["user_id", 57], ["id", 20], ["LIMIT", 1]]
+  ↳ db/seeds.rb:18
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ db/seeds.rb:16
+  [1m[36mMovie Load (0.1ms)[0m  [1m[34mSELECT "movies".* FROM "movies"[0m
+  ↳ db/seeds.rb:17
+  [1m[36mMovie Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "movies" INNER JOIN "liked_movies" ON "movies"."id" = "liked_movies"."movie_id" WHERE "liked_movies"."user_id" = ? AND "movies"."id" = ? LIMIT ?[0m  [["user_id", 52], ["id", 16], ["LIMIT", 1]]
+  ↳ db/seeds.rb:18
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:21
+  [1m[36mLikedMovie Create (0.2ms)[0m  [1m[32mINSERT INTO "liked_movies" ("user_id", "movie_id") VALUES (?, ?)[0m  [["user_id", 52], ["movie_id", 16]]
+  ↳ db/seeds.rb:21
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:21
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ db/seeds.rb:16
+  [1m[36mMovie Load (0.1ms)[0m  [1m[34mSELECT "movies".* FROM "movies"[0m
+  ↳ db/seeds.rb:17
+  [1m[36mMovie Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "movies" INNER JOIN "liked_movies" ON "movies"."id" = "liked_movies"."movie_id" WHERE "liked_movies"."user_id" = ? AND "movies"."id" = ? LIMIT ?[0m  [["user_id", 56], ["id", 18], ["LIMIT", 1]]
+  ↳ db/seeds.rb:18
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:21
+  [1m[36mLikedMovie Create (0.2ms)[0m  [1m[32mINSERT INTO "liked_movies" ("user_id", "movie_id") VALUES (?, ?)[0m  [["user_id", 56], ["movie_id", 18]]
+  ↳ db/seeds.rb:21
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:21
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ db/seeds.rb:16
+  [1m[36mMovie Load (0.1ms)[0m  [1m[34mSELECT "movies".* FROM "movies"[0m
+  ↳ db/seeds.rb:17
+  [1m[36mMovie Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "movies" INNER JOIN "liked_movies" ON "movies"."id" = "liked_movies"."movie_id" WHERE "liked_movies"."user_id" = ? AND "movies"."id" = ? LIMIT ?[0m  [["user_id", 37], ["id", 30], ["LIMIT", 1]]
+  ↳ db/seeds.rb:18
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ db/seeds.rb:16
+  [1m[36mMovie Load (0.1ms)[0m  [1m[34mSELECT "movies".* FROM "movies"[0m
+  ↳ db/seeds.rb:17
+  [1m[36mMovie Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "movies" INNER JOIN "liked_movies" ON "movies"."id" = "liked_movies"."movie_id" WHERE "liked_movies"."user_id" = ? AND "movies"."id" = ? LIMIT ?[0m  [["user_id", 37], ["id", 28], ["LIMIT", 1]]
+  ↳ db/seeds.rb:18
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:21
+  [1m[36mLikedMovie Create (0.3ms)[0m  [1m[32mINSERT INTO "liked_movies" ("user_id", "movie_id") VALUES (?, ?)[0m  [["user_id", 37], ["movie_id", 28]]
+  ↳ db/seeds.rb:21
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:21
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ db/seeds.rb:16
+  [1m[36mMovie Load (0.1ms)[0m  [1m[34mSELECT "movies".* FROM "movies"[0m
+  ↳ db/seeds.rb:17
+  [1m[36mMovie Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "movies" INNER JOIN "liked_movies" ON "movies"."id" = "liked_movies"."movie_id" WHERE "liked_movies"."user_id" = ? AND "movies"."id" = ? LIMIT ?[0m  [["user_id", 53], ["id", 19], ["LIMIT", 1]]
+  ↳ db/seeds.rb:18
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:21
+  [1m[36mLikedMovie Create (0.2ms)[0m  [1m[32mINSERT INTO "liked_movies" ("user_id", "movie_id") VALUES (?, ?)[0m  [["user_id", 53], ["movie_id", 19]]
+  ↳ db/seeds.rb:21
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:21
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ db/seeds.rb:16
+  [1m[36mMovie Load (0.1ms)[0m  [1m[34mSELECT "movies".* FROM "movies"[0m
+  ↳ db/seeds.rb:17
+  [1m[36mMovie Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "movies" INNER JOIN "liked_movies" ON "movies"."id" = "liked_movies"."movie_id" WHERE "liked_movies"."user_id" = ? AND "movies"."id" = ? LIMIT ?[0m  [["user_id", 47], ["id", 19], ["LIMIT", 1]]
+  ↳ db/seeds.rb:18
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ db/seeds.rb:16
+  [1m[36mMovie Load (0.1ms)[0m  [1m[34mSELECT "movies".* FROM "movies"[0m
+  ↳ db/seeds.rb:17
+  [1m[36mMovie Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "movies" INNER JOIN "liked_movies" ON "movies"."id" = "liked_movies"."movie_id" WHERE "liked_movies"."user_id" = ? AND "movies"."id" = ? LIMIT ?[0m  [["user_id", 31], ["id", 28], ["LIMIT", 1]]
+  ↳ db/seeds.rb:18
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:21
+  [1m[36mLikedMovie Create (0.2ms)[0m  [1m[32mINSERT INTO "liked_movies" ("user_id", "movie_id") VALUES (?, ?)[0m  [["user_id", 31], ["movie_id", 28]]
+  ↳ db/seeds.rb:21
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:21
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ db/seeds.rb:16
+  [1m[36mMovie Load (0.1ms)[0m  [1m[34mSELECT "movies".* FROM "movies"[0m
+  ↳ db/seeds.rb:17
+  [1m[36mMovie Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "movies" INNER JOIN "liked_movies" ON "movies"."id" = "liked_movies"."movie_id" WHERE "liked_movies"."user_id" = ? AND "movies"."id" = ? LIMIT ?[0m  [["user_id", 50], ["id", 20], ["LIMIT", 1]]
+  ↳ db/seeds.rb:18
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:21
+  [1m[36mLikedMovie Create (0.2ms)[0m  [1m[32mINSERT INTO "liked_movies" ("user_id", "movie_id") VALUES (?, ?)[0m  [["user_id", 50], ["movie_id", 20]]
+  ↳ db/seeds.rb:21
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:21
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ db/seeds.rb:16
+  [1m[36mMovie Load (0.1ms)[0m  [1m[34mSELECT "movies".* FROM "movies"[0m
+  ↳ db/seeds.rb:17
+  [1m[36mMovie Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "movies" INNER JOIN "liked_movies" ON "movies"."id" = "liked_movies"."movie_id" WHERE "liked_movies"."user_id" = ? AND "movies"."id" = ? LIMIT ?[0m  [["user_id", 39], ["id", 26], ["LIMIT", 1]]
+  ↳ db/seeds.rb:18
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:21
+  [1m[36mLikedMovie Create (0.2ms)[0m  [1m[32mINSERT INTO "liked_movies" ("user_id", "movie_id") VALUES (?, ?)[0m  [["user_id", 39], ["movie_id", 26]]
+  ↳ db/seeds.rb:21
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:21
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ db/seeds.rb:16
+  [1m[36mMovie Load (0.1ms)[0m  [1m[34mSELECT "movies".* FROM "movies"[0m
+  ↳ db/seeds.rb:17
+  [1m[36mMovie Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "movies" INNER JOIN "liked_movies" ON "movies"."id" = "liked_movies"."movie_id" WHERE "liked_movies"."user_id" = ? AND "movies"."id" = ? LIMIT ?[0m  [["user_id", 54], ["id", 18], ["LIMIT", 1]]
+  ↳ db/seeds.rb:18
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ db/seeds.rb:16
+  [1m[36mMovie Load (0.1ms)[0m  [1m[34mSELECT "movies".* FROM "movies"[0m
+  ↳ db/seeds.rb:17
+  [1m[36mMovie Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "movies" INNER JOIN "liked_movies" ON "movies"."id" = "liked_movies"."movie_id" WHERE "liked_movies"."user_id" = ? AND "movies"."id" = ? LIMIT ?[0m  [["user_id", 52], ["id", 26], ["LIMIT", 1]]
+  ↳ db/seeds.rb:18
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:21
+  [1m[36mLikedMovie Create (0.2ms)[0m  [1m[32mINSERT INTO "liked_movies" ("user_id", "movie_id") VALUES (?, ?)[0m  [["user_id", 52], ["movie_id", 26]]
+  ↳ db/seeds.rb:21
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:21
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ db/seeds.rb:16
+  [1m[36mMovie Load (0.1ms)[0m  [1m[34mSELECT "movies".* FROM "movies"[0m
+  ↳ db/seeds.rb:17
+  [1m[36mMovie Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "movies" INNER JOIN "liked_movies" ON "movies"."id" = "liked_movies"."movie_id" WHERE "liked_movies"."user_id" = ? AND "movies"."id" = ? LIMIT ?[0m  [["user_id", 44], ["id", 16], ["LIMIT", 1]]
+  ↳ db/seeds.rb:18
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ db/seeds.rb:16
+  [1m[36mMovie Load (0.1ms)[0m  [1m[34mSELECT "movies".* FROM "movies"[0m
+  ↳ db/seeds.rb:17
+  [1m[36mMovie Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "movies" INNER JOIN "liked_movies" ON "movies"."id" = "liked_movies"."movie_id" WHERE "liked_movies"."user_id" = ? AND "movies"."id" = ? LIMIT ?[0m  [["user_id", 41], ["id", 17], ["LIMIT", 1]]
+  ↳ db/seeds.rb:18
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:21
+  [1m[36mLikedMovie Create (0.2ms)[0m  [1m[32mINSERT INTO "liked_movies" ("user_id", "movie_id") VALUES (?, ?)[0m  [["user_id", 41], ["movie_id", 17]]
+  ↳ db/seeds.rb:21
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:21
+Started GET "/users" for 127.0.0.1 at 2019-02-21 14:51:47 +0530
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/apple/.rbenv/versions/2.6.1/lib/ruby/gems/2.6.0/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  Rendered users/index.html.erb within layouts/application (3.7ms)
+Completed 500 Internal Server Error in 16ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (undefined method `each' for nil:NilClass):
+    1: <ul><h2>Select a user:</h2>
+    2:   <% @users.each do |user| %>
+    3:     <li><%= link_to user.name, user %></li>
+    4:   <% end %>
+    5: </ul>
+  
+app/views/users/index.html.erb:2:in `_app_views_users_index_html_erb__1422434068745739575_70329347883280'
+Started GET "/users" for 127.0.0.1 at 2019-02-21 15:00:21 +0530
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/apple/.rbenv/versions/2.6.1/lib/ruby/gems/2.6.0/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:2
+  Rendered users/index.html.erb within layouts/application (8.4ms)
+Completed 200 OK in 711ms (Views: 692.8ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/users/32" for 127.0.0.1 at 2019-02-21 15:00:31 +0530
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"32"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 32], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:12
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" != ?[0m  [["id", 32]]
+  ↳ lib/recommendation.rb:5
+  [1m[36mMovie Load (0.2ms)[0m  [1m[34mSELECT "movies".* FROM "movies" INNER JOIN "liked_movies" ON "movies"."id" = "liked_movies"."movie_id" WHERE "liked_movies"."user_id" = ?[0m  [["user_id", 31]]
+  ↳ lib/recommendation.rb:6
+  [1m[36mMovie Load (0.2ms)[0m  [1m[34mSELECT "movies".* FROM "movies" INNER JOIN "liked_movies" ON "movies"."id" = "liked_movies"."movie_id" WHERE "liked_movies"."user_id" = ?[0m  [["user_id", 32]]
+  ↳ lib/recommendation.rb:6
+  Rendered users/show.html.erb within layouts/application (57.0ms)
+Completed 500 Internal Server Error in 79ms (ActiveRecord: 3.0ms)
+
+
+  
+ActionView::Template::Error (undefined method `—' for #<User id: 32, name: "Ernest Berge">):
+    3:     <th>Movie</th>
+    4:     <th>Rating</th>
+    5:   </tr>
+    6:   <% @user.recommend_movies.each do |key, value| %>
+    7:   <tr>
+    8:     <td><%= key.name %></td>
+    9:     <td><%= value.round(2) %></td>
+  
+lib/recommendation.rb:8:in `block in recommend_movies'
+lib/recommendation.rb:5:in `recommend_movies'
+app/views/users/show.html.erb:6:in `_app_views_users_show_html_erb__1253380853779656365_70271412230920'
+Started GET "/users/32" for 127.0.0.1 at 2019-02-21 15:05:47 +0530
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/apple/.rbenv/versions/2.6.1/lib/ruby/gems/2.6.0/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"32"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 32], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:12
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" != ?[0m  [["id", 32]]
+  ↳ lib/recommendation.rb:5
+  [1m[36mMovie Load (0.3ms)[0m  [1m[34mSELECT "movies".* FROM "movies" INNER JOIN "liked_movies" ON "movies"."id" = "liked_movies"."movie_id" WHERE "liked_movies"."user_id" = ?[0m  [["user_id", 31]]
+  ↳ lib/recommendation.rb:6
+  [1m[36mMovie Load (0.1ms)[0m  [1m[34mSELECT "movies".* FROM "movies" INNER JOIN "liked_movies" ON "movies"."id" = "liked_movies"."movie_id" WHERE "liked_movies"."user_id" = ?[0m  [["user_id", 32]]
+  ↳ lib/recommendation.rb:6
+  [1m[36mMovie Load (0.1ms)[0m  [1m[34mSELECT "movies".* FROM "movies" INNER JOIN "liked_movies" ON "movies"."id" = "liked_movies"."movie_id" WHERE "liked_movies"."user_id" = ?[0m  [["user_id", 33]]
+  ↳ lib/recommendation.rb:6
+  [1m[36mMovie Load (0.1ms)[0m  [1m[34mSELECT "movies".* FROM "movies" INNER JOIN "liked_movies" ON "movies"."id" = "liked_movies"."movie_id" WHERE "liked_movies"."user_id" = ?[0m  [["user_id", 34]]
+  ↳ lib/recommendation.rb:6
+  [1m[36mMovie Load (0.1ms)[0m  [1m[34mSELECT "movies".* FROM "movies" INNER JOIN "liked_movies" ON "movies"."id" = "liked_movies"."movie_id" WHERE "liked_movies"."user_id" = ?[0m  [["user_id", 35]]
+  ↳ lib/recommendation.rb:6
+  [1m[36mMovie Load (0.1ms)[0m  [1m[34mSELECT "movies".* FROM "movies" INNER JOIN "liked_movies" ON "movies"."id" = "liked_movies"."movie_id" WHERE "liked_movies"."user_id" = ?[0m  [["user_id", 36]]
+  ↳ lib/recommendation.rb:6
+  [1m[36mMovie Load (0.1ms)[0m  [1m[34mSELECT "movies".* FROM "movies" INNER JOIN "liked_movies" ON "movies"."id" = "liked_movies"."movie_id" WHERE "liked_movies"."user_id" = ?[0m  [["user_id", 37]]
+  ↳ lib/recommendation.rb:6
+  [1m[36mMovie Load (0.1ms)[0m  [1m[34mSELECT "movies".* FROM "movies" INNER JOIN "liked_movies" ON "movies"."id" = "liked_movies"."movie_id" WHERE "liked_movies"."user_id" = ?[0m  [["user_id", 38]]
+  ↳ lib/recommendation.rb:6
+  [1m[36mMovie Load (0.1ms)[0m  [1m[34mSELECT "movies".* FROM "movies" INNER JOIN "liked_movies" ON "movies"."id" = "liked_movies"."movie_id" WHERE "liked_movies"."user_id" = ?[0m  [["user_id", 39]]
+  ↳ lib/recommendation.rb:6
+  [1m[36mMovie Load (0.6ms)[0m  [1m[34mSELECT "movies".* FROM "movies" INNER JOIN "liked_movies" ON "movies"."id" = "liked_movies"."movie_id" WHERE "liked_movies"."user_id" = ?[0m  [["user_id", 40]]
+  ↳ lib/recommendation.rb:6
+  [1m[36mMovie Load (0.2ms)[0m  [1m[34mSELECT "movies".* FROM "movies" INNER JOIN "liked_movies" ON "movies"."id" = "liked_movies"."movie_id" WHERE "liked_movies"."user_id" = ?[0m  [["user_id", 41]]
+  ↳ lib/recommendation.rb:6
+  [1m[36mMovie Load (0.1ms)[0m  [1m[34mSELECT "movies".* FROM "movies" INNER JOIN "liked_movies" ON "movies"."id" = "liked_movies"."movie_id" WHERE "liked_movies"."user_id" = ?[0m  [["user_id", 42]]
+  ↳ lib/recommendation.rb:6
+  [1m[36mMovie Load (0.2ms)[0m  [1m[34mSELECT "movies".* FROM "movies" INNER JOIN "liked_movies" ON "movies"."id" = "liked_movies"."movie_id" WHERE "liked_movies"."user_id" = ?[0m  [["user_id", 43]]
+  ↳ lib/recommendation.rb:6
+  [1m[36mMovie Load (0.1ms)[0m  [1m[34mSELECT "movies".* FROM "movies" INNER JOIN "liked_movies" ON "movies"."id" = "liked_movies"."movie_id" WHERE "liked_movies"."user_id" = ?[0m  [["user_id", 44]]
+  ↳ lib/recommendation.rb:6
+  [1m[36mMovie Load (0.1ms)[0m  [1m[34mSELECT "movies".* FROM "movies" INNER JOIN "liked_movies" ON "movies"."id" = "liked_movies"."movie_id" WHERE "liked_movies"."user_id" = ?[0m  [["user_id", 45]]
+  ↳ lib/recommendation.rb:6
+  [1m[36mMovie Load (0.1ms)[0m  [1m[34mSELECT "movies".* FROM "movies" INNER JOIN "liked_movies" ON "movies"."id" = "liked_movies"."movie_id" WHERE "liked_movies"."user_id" = ?[0m  [["user_id", 46]]
+  ↳ lib/recommendation.rb:6
+  [1m[36mMovie Load (0.1ms)[0m  [1m[34mSELECT "movies".* FROM "movies" INNER JOIN "liked_movies" ON "movies"."id" = "liked_movies"."movie_id" WHERE "liked_movies"."user_id" = ?[0m  [["user_id", 47]]
+  ↳ lib/recommendation.rb:6
+  [1m[36mMovie Load (0.1ms)[0m  [1m[34mSELECT "movies".* FROM "movies" INNER JOIN "liked_movies" ON "movies"."id" = "liked_movies"."movie_id" WHERE "liked_movies"."user_id" = ?[0m  [["user_id", 48]]
+  ↳ lib/recommendation.rb:6
+  [1m[36mMovie Load (0.1ms)[0m  [1m[34mSELECT "movies".* FROM "movies" INNER JOIN "liked_movies" ON "movies"."id" = "liked_movies"."movie_id" WHERE "liked_movies"."user_id" = ?[0m  [["user_id", 49]]
+  ↳ lib/recommendation.rb:6
+  [1m[36mMovie Load (0.2ms)[0m  [1m[34mSELECT "movies".* FROM "movies" INNER JOIN "liked_movies" ON "movies"."id" = "liked_movies"."movie_id" WHERE "liked_movies"."user_id" = ?[0m  [["user_id", 50]]
+  ↳ lib/recommendation.rb:6
+  [1m[36mMovie Load (0.8ms)[0m  [1m[34mSELECT "movies".* FROM "movies" INNER JOIN "liked_movies" ON "movies"."id" = "liked_movies"."movie_id" WHERE "liked_movies"."user_id" = ?[0m  [["user_id", 51]]
+  ↳ lib/recommendation.rb:6
+  [1m[36mMovie Load (0.1ms)[0m  [1m[34mSELECT "movies".* FROM "movies" INNER JOIN "liked_movies" ON "movies"."id" = "liked_movies"."movie_id" WHERE "liked_movies"."user_id" = ?[0m  [["user_id", 52]]
+  ↳ lib/recommendation.rb:6
+  [1m[36mMovie Load (0.1ms)[0m  [1m[34mSELECT "movies".* FROM "movies" INNER JOIN "liked_movies" ON "movies"."id" = "liked_movies"."movie_id" WHERE "liked_movies"."user_id" = ?[0m  [["user_id", 53]]
+  ↳ lib/recommendation.rb:6
+  [1m[36mMovie Load (0.1ms)[0m  [1m[34mSELECT "movies".* FROM "movies" INNER JOIN "liked_movies" ON "movies"."id" = "liked_movies"."movie_id" WHERE "liked_movies"."user_id" = ?[0m  [["user_id", 54]]
+  ↳ lib/recommendation.rb:6
+  [1m[36mMovie Load (0.1ms)[0m  [1m[34mSELECT "movies".* FROM "movies" INNER JOIN "liked_movies" ON "movies"."id" = "liked_movies"."movie_id" WHERE "liked_movies"."user_id" = ?[0m  [["user_id", 55]]
+  ↳ lib/recommendation.rb:6
+  [1m[36mMovie Load (0.1ms)[0m  [1m[34mSELECT "movies".* FROM "movies" INNER JOIN "liked_movies" ON "movies"."id" = "liked_movies"."movie_id" WHERE "liked_movies"."user_id" = ?[0m  [["user_id", 56]]
+  ↳ lib/recommendation.rb:6
+  [1m[36mMovie Load (0.1ms)[0m  [1m[34mSELECT "movies".* FROM "movies" INNER JOIN "liked_movies" ON "movies"."id" = "liked_movies"."movie_id" WHERE "liked_movies"."user_id" = ?[0m  [["user_id", 57]]
+  ↳ lib/recommendation.rb:6
+  [1m[36mMovie Load (0.1ms)[0m  [1m[34mSELECT "movies".* FROM "movies" INNER JOIN "liked_movies" ON "movies"."id" = "liked_movies"."movie_id" WHERE "liked_movies"."user_id" = ?[0m  [["user_id", 58]]
+  ↳ lib/recommendation.rb:6
+  [1m[36mMovie Load (0.1ms)[0m  [1m[34mSELECT "movies".* FROM "movies" INNER JOIN "liked_movies" ON "movies"."id" = "liked_movies"."movie_id" WHERE "liked_movies"."user_id" = ?[0m  [["user_id", 59]]
+  ↳ lib/recommendation.rb:6
+  [1m[36mMovie Load (0.1ms)[0m  [1m[34mSELECT "movies".* FROM "movies" INNER JOIN "liked_movies" ON "movies"."id" = "liked_movies"."movie_id" WHERE "liked_movies"."user_id" = ?[0m  [["user_id", 60]]
+  ↳ lib/recommendation.rb:6
+  Rendered users/show.html.erb within layouts/application (74.7ms)
+Completed 200 OK in 334ms (Views: 300.0ms | ActiveRecord: 6.4ms)
+
+
+Started GET "/users" for 127.0.0.1 at 2019-02-21 15:06:48 +0530
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:2
+  Rendered users/index.html.erb within layouts/application (4.9ms)
+Completed 200 OK in 71ms (Views: 67.2ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/users/45" for 127.0.0.1 at 2019-02-21 15:06:49 +0530
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"45"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 45], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:12
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" != ?[0m  [["id", 45]]
+  ↳ lib/recommendation.rb:5
+  [1m[36mMovie Load (0.4ms)[0m  [1m[34mSELECT "movies".* FROM "movies" INNER JOIN "liked_movies" ON "movies"."id" = "liked_movies"."movie_id" WHERE "liked_movies"."user_id" = ?[0m  [["user_id", 31]]
+  ↳ lib/recommendation.rb:6
+  [1m[36mMovie Load (0.5ms)[0m  [1m[34mSELECT "movies".* FROM "movies" INNER JOIN "liked_movies" ON "movies"."id" = "liked_movies"."movie_id" WHERE "liked_movies"."user_id" = ?[0m  [["user_id", 45]]
+  ↳ lib/recommendation.rb:6
+  [1m[36mMovie Load (0.2ms)[0m  [1m[34mSELECT "movies".* FROM "movies" INNER JOIN "liked_movies" ON "movies"."id" = "liked_movies"."movie_id" WHERE "liked_movies"."user_id" = ?[0m  [["user_id", 32]]
+  ↳ lib/recommendation.rb:6
+  [1m[36mMovie Load (0.2ms)[0m  [1m[34mSELECT "movies".* FROM "movies" INNER JOIN "liked_movies" ON "movies"."id" = "liked_movies"."movie_id" WHERE "liked_movies"."user_id" = ?[0m  [["user_id", 33]]
+  ↳ lib/recommendation.rb:6
+  [1m[36mMovie Load (0.2ms)[0m  [1m[34mSELECT "movies".* FROM "movies" INNER JOIN "liked_movies" ON "movies"."id" = "liked_movies"."movie_id" WHERE "liked_movies"."user_id" = ?[0m  [["user_id", 34]]
+  ↳ lib/recommendation.rb:6
+  [1m[36mMovie Load (0.2ms)[0m  [1m[34mSELECT "movies".* FROM "movies" INNER JOIN "liked_movies" ON "movies"."id" = "liked_movies"."movie_id" WHERE "liked_movies"."user_id" = ?[0m  [["user_id", 35]]
+  ↳ lib/recommendation.rb:6
+  [1m[36mMovie Load (0.2ms)[0m  [1m[34mSELECT "movies".* FROM "movies" INNER JOIN "liked_movies" ON "movies"."id" = "liked_movies"."movie_id" WHERE "liked_movies"."user_id" = ?[0m  [["user_id", 36]]
+  ↳ lib/recommendation.rb:6
+  [1m[36mMovie Load (0.3ms)[0m  [1m[34mSELECT "movies".* FROM "movies" INNER JOIN "liked_movies" ON "movies"."id" = "liked_movies"."movie_id" WHERE "liked_movies"."user_id" = ?[0m  [["user_id", 37]]
+  ↳ lib/recommendation.rb:6
+  [1m[36mMovie Load (0.2ms)[0m  [1m[34mSELECT "movies".* FROM "movies" INNER JOIN "liked_movies" ON "movies"."id" = "liked_movies"."movie_id" WHERE "liked_movies"."user_id" = ?[0m  [["user_id", 38]]
+  ↳ lib/recommendation.rb:6
+  [1m[36mMovie Load (0.3ms)[0m  [1m[34mSELECT "movies".* FROM "movies" INNER JOIN "liked_movies" ON "movies"."id" = "liked_movies"."movie_id" WHERE "liked_movies"."user_id" = ?[0m  [["user_id", 39]]
+  ↳ lib/recommendation.rb:6
+  [1m[36mMovie Load (0.2ms)[0m  [1m[34mSELECT "movies".* FROM "movies" INNER JOIN "liked_movies" ON "movies"."id" = "liked_movies"."movie_id" WHERE "liked_movies"."user_id" = ?[0m  [["user_id", 40]]
+  ↳ lib/recommendation.rb:6
+  [1m[36mMovie Load (0.5ms)[0m  [1m[34mSELECT "movies".* FROM "movies" INNER JOIN "liked_movies" ON "movies"."id" = "liked_movies"."movie_id" WHERE "liked_movies"."user_id" = ?[0m  [["user_id", 41]]
+  ↳ lib/recommendation.rb:6
+  [1m[36mMovie Load (0.2ms)[0m  [1m[34mSELECT "movies".* FROM "movies" INNER JOIN "liked_movies" ON "movies"."id" = "liked_movies"."movie_id" WHERE "liked_movies"."user_id" = ?[0m  [["user_id", 42]]
+  ↳ lib/recommendation.rb:6
+  [1m[36mMovie Load (0.2ms)[0m  [1m[34mSELECT "movies".* FROM "movies" INNER JOIN "liked_movies" ON "movies"."id" = "liked_movies"."movie_id" WHERE "liked_movies"."user_id" = ?[0m  [["user_id", 43]]
+  ↳ lib/recommendation.rb:6
+  [1m[36mMovie Load (0.2ms)[0m  [1m[34mSELECT "movies".* FROM "movies" INNER JOIN "liked_movies" ON "movies"."id" = "liked_movies"."movie_id" WHERE "liked_movies"."user_id" = ?[0m  [["user_id", 44]]
+  ↳ lib/recommendation.rb:6
+  [1m[36mMovie Load (0.2ms)[0m  [1m[34mSELECT "movies".* FROM "movies" INNER JOIN "liked_movies" ON "movies"."id" = "liked_movies"."movie_id" WHERE "liked_movies"."user_id" = ?[0m  [["user_id", 46]]
+  ↳ lib/recommendation.rb:6
+  [1m[36mMovie Load (0.2ms)[0m  [1m[34mSELECT "movies".* FROM "movies" INNER JOIN "liked_movies" ON "movies"."id" = "liked_movies"."movie_id" WHERE "liked_movies"."user_id" = ?[0m  [["user_id", 47]]
+  ↳ lib/recommendation.rb:6
+  [1m[36mMovie Load (0.2ms)[0m  [1m[34mSELECT "movies".* FROM "movies" INNER JOIN "liked_movies" ON "movies"."id" = "liked_movies"."movie_id" WHERE "liked_movies"."user_id" = ?[0m  [["user_id", 48]]
+  ↳ lib/recommendation.rb:6
+  [1m[36mMovie Load (0.3ms)[0m  [1m[34mSELECT "movies".* FROM "movies" INNER JOIN "liked_movies" ON "movies"."id" = "liked_movies"."movie_id" WHERE "liked_movies"."user_id" = ?[0m  [["user_id", 49]]
+  ↳ lib/recommendation.rb:6
+  [1m[36mMovie Load (0.3ms)[0m  [1m[34mSELECT "movies".* FROM "movies" INNER JOIN "liked_movies" ON "movies"."id" = "liked_movies"."movie_id" WHERE "liked_movies"."user_id" = ?[0m  [["user_id", 50]]
+  ↳ lib/recommendation.rb:6
+  [1m[36mMovie Load (0.1ms)[0m  [1m[34mSELECT "movies".* FROM "movies" INNER JOIN "liked_movies" ON "movies"."id" = "liked_movies"."movie_id" WHERE "liked_movies"."user_id" = ?[0m  [["user_id", 51]]
+  ↳ lib/recommendation.rb:6
+  [1m[36mMovie Load (0.2ms)[0m  [1m[34mSELECT "movies".* FROM "movies" INNER JOIN "liked_movies" ON "movies"."id" = "liked_movies"."movie_id" WHERE "liked_movies"."user_id" = ?[0m  [["user_id", 52]]
+  ↳ lib/recommendation.rb:6
+  [1m[36mMovie Load (0.1ms)[0m  [1m[34mSELECT "movies".* FROM "movies" INNER JOIN "liked_movies" ON "movies"."id" = "liked_movies"."movie_id" WHERE "liked_movies"."user_id" = ?[0m  [["user_id", 53]]
+  ↳ lib/recommendation.rb:6
+  [1m[36mMovie Load (0.2ms)[0m  [1m[34mSELECT "movies".* FROM "movies" INNER JOIN "liked_movies" ON "movies"."id" = "liked_movies"."movie_id" WHERE "liked_movies"."user_id" = ?[0m  [["user_id", 54]]
+  ↳ lib/recommendation.rb:6
+  [1m[36mMovie Load (0.5ms)[0m  [1m[34mSELECT "movies".* FROM "movies" INNER JOIN "liked_movies" ON "movies"."id" = "liked_movies"."movie_id" WHERE "liked_movies"."user_id" = ?[0m  [["user_id", 55]]
+  ↳ lib/recommendation.rb:6
+  [1m[36mMovie Load (0.1ms)[0m  [1m[34mSELECT "movies".* FROM "movies" INNER JOIN "liked_movies" ON "movies"."id" = "liked_movies"."movie_id" WHERE "liked_movies"."user_id" = ?[0m  [["user_id", 56]]
+  ↳ lib/recommendation.rb:6
+  [1m[36mMovie Load (0.1ms)[0m  [1m[34mSELECT "movies".* FROM "movies" INNER JOIN "liked_movies" ON "movies"."id" = "liked_movies"."movie_id" WHERE "liked_movies"."user_id" = ?[0m  [["user_id", 57]]
+  ↳ lib/recommendation.rb:6
+  [1m[36mMovie Load (0.1ms)[0m  [1m[34mSELECT "movies".* FROM "movies" INNER JOIN "liked_movies" ON "movies"."id" = "liked_movies"."movie_id" WHERE "liked_movies"."user_id" = ?[0m  [["user_id", 58]]
+  ↳ lib/recommendation.rb:6
+  [1m[36mMovie Load (0.1ms)[0m  [1m[34mSELECT "movies".* FROM "movies" INNER JOIN "liked_movies" ON "movies"."id" = "liked_movies"."movie_id" WHERE "liked_movies"."user_id" = ?[0m  [["user_id", 59]]
+  ↳ lib/recommendation.rb:6
+  [1m[36mMovie Load (0.1ms)[0m  [1m[34mSELECT "movies".* FROM "movies" INNER JOIN "liked_movies" ON "movies"."id" = "liked_movies"."movie_id" WHERE "liked_movies"."user_id" = ?[0m  [["user_id", 60]]
+  ↳ lib/recommendation.rb:6
+  Rendered users/show.html.erb within layouts/application (81.3ms)
+Completed 200 OK in 103ms (Views: 87.2ms | ActiveRecord: 8.0ms)
+
+
+Started GET "/users/49" for 127.0.0.1 at 2019-02-21 15:06:54 +0530
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"49"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 49], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:12
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" != ?[0m  [["id", 49]]
+  ↳ lib/recommendation.rb:5
+  [1m[36mMovie Load (0.2ms)[0m  [1m[34mSELECT "movies".* FROM "movies" INNER JOIN "liked_movies" ON "movies"."id" = "liked_movies"."movie_id" WHERE "liked_movies"."user_id" = ?[0m  [["user_id", 31]]
+  ↳ lib/recommendation.rb:6
+  [1m[36mMovie Load (0.3ms)[0m  [1m[34mSELECT "movies".* FROM "movies" INNER JOIN "liked_movies" ON "movies"."id" = "liked_movies"."movie_id" WHERE "liked_movies"."user_id" = ?[0m  [["user_id", 49]]
+  ↳ lib/recommendation.rb:6
+  [1m[36mMovie Load (0.1ms)[0m  [1m[34mSELECT "movies".* FROM "movies" INNER JOIN "liked_movies" ON "movies"."id" = "liked_movies"."movie_id" WHERE "liked_movies"."user_id" = ?[0m  [["user_id", 32]]
+  ↳ lib/recommendation.rb:6
+  [1m[36mMovie Load (0.2ms)[0m  [1m[34mSELECT "movies".* FROM "movies" INNER JOIN "liked_movies" ON "movies"."id" = "liked_movies"."movie_id" WHERE "liked_movies"."user_id" = ?[0m  [["user_id", 33]]
+  ↳ lib/recommendation.rb:6
+  [1m[36mMovie Load (0.2ms)[0m  [1m[34mSELECT "movies".* FROM "movies" INNER JOIN "liked_movies" ON "movies"."id" = "liked_movies"."movie_id" WHERE "liked_movies"."user_id" = ?[0m  [["user_id", 34]]
+  ↳ lib/recommendation.rb:6
+  [1m[36mMovie Load (0.4ms)[0m  [1m[34mSELECT "movies".* FROM "movies" INNER JOIN "liked_movies" ON "movies"."id" = "liked_movies"."movie_id" WHERE "liked_movies"."user_id" = ?[0m  [["user_id", 35]]
+  ↳ lib/recommendation.rb:6
+  [1m[36mMovie Load (0.2ms)[0m  [1m[34mSELECT "movies".* FROM "movies" INNER JOIN "liked_movies" ON "movies"."id" = "liked_movies"."movie_id" WHERE "liked_movies"."user_id" = ?[0m  [["user_id", 36]]
+  ↳ lib/recommendation.rb:6
+  [1m[36mMovie Load (0.2ms)[0m  [1m[34mSELECT "movies".* FROM "movies" INNER JOIN "liked_movies" ON "movies"."id" = "liked_movies"."movie_id" WHERE "liked_movies"."user_id" = ?[0m  [["user_id", 37]]
+  ↳ lib/recommendation.rb:6
+  [1m[36mMovie Load (0.2ms)[0m  [1m[34mSELECT "movies".* FROM "movies" INNER JOIN "liked_movies" ON "movies"."id" = "liked_movies"."movie_id" WHERE "liked_movies"."user_id" = ?[0m  [["user_id", 38]]
+  ↳ lib/recommendation.rb:6
+  [1m[36mMovie Load (0.1ms)[0m  [1m[34mSELECT "movies".* FROM "movies" INNER JOIN "liked_movies" ON "movies"."id" = "liked_movies"."movie_id" WHERE "liked_movies"."user_id" = ?[0m  [["user_id", 39]]
+  ↳ lib/recommendation.rb:6
+  [1m[36mMovie Load (0.1ms)[0m  [1m[34mSELECT "movies".* FROM "movies" INNER JOIN "liked_movies" ON "movies"."id" = "liked_movies"."movie_id" WHERE "liked_movies"."user_id" = ?[0m  [["user_id", 40]]
+  ↳ lib/recommendation.rb:6
+  [1m[36mMovie Load (0.1ms)[0m  [1m[34mSELECT "movies".* FROM "movies" INNER JOIN "liked_movies" ON "movies"."id" = "liked_movies"."movie_id" WHERE "liked_movies"."user_id" = ?[0m  [["user_id", 41]]
+  ↳ lib/recommendation.rb:6
+  [1m[36mMovie Load (0.2ms)[0m  [1m[34mSELECT "movies".* FROM "movies" INNER JOIN "liked_movies" ON "movies"."id" = "liked_movies"."movie_id" WHERE "liked_movies"."user_id" = ?[0m  [["user_id", 42]]
+  ↳ lib/recommendation.rb:6
+  [1m[36mMovie Load (0.3ms)[0m  [1m[34mSELECT "movies".* FROM "movies" INNER JOIN "liked_movies" ON "movies"."id" = "liked_movies"."movie_id" WHERE "liked_movies"."user_id" = ?[0m  [["user_id", 43]]
+  ↳ lib/recommendation.rb:6
+  [1m[36mMovie Load (0.7ms)[0m  [1m[34mSELECT "movies".* FROM "movies" INNER JOIN "liked_movies" ON "movies"."id" = "liked_movies"."movie_id" WHERE "liked_movies"."user_id" = ?[0m  [["user_id", 44]]
+  ↳ lib/recommendation.rb:6
+  [1m[36mMovie Load (0.2ms)[0m  [1m[34mSELECT "movies".* FROM "movies" INNER JOIN "liked_movies" ON "movies"."id" = "liked_movies"."movie_id" WHERE "liked_movies"."user_id" = ?[0m  [["user_id", 45]]
+  ↳ lib/recommendation.rb:6
+  [1m[36mMovie Load (0.2ms)[0m  [1m[34mSELECT "movies".* FROM "movies" INNER JOIN "liked_movies" ON "movies"."id" = "liked_movies"."movie_id" WHERE "liked_movies"."user_id" = ?[0m  [["user_id", 46]]
+  ↳ lib/recommendation.rb:6
+  [1m[36mMovie Load (0.2ms)[0m  [1m[34mSELECT "movies".* FROM "movies" INNER JOIN "liked_movies" ON "movies"."id" = "liked_movies"."movie_id" WHERE "liked_movies"."user_id" = ?[0m  [["user_id", 47]]
+  ↳ lib/recommendation.rb:6
+  [1m[36mMovie Load (0.2ms)[0m  [1m[34mSELECT "movies".* FROM "movies" INNER JOIN "liked_movies" ON "movies"."id" = "liked_movies"."movie_id" WHERE "liked_movies"."user_id" = ?[0m  [["user_id", 48]]
+  ↳ lib/recommendation.rb:6
+  [1m[36mMovie Load (0.2ms)[0m  [1m[34mSELECT "movies".* FROM "movies" INNER JOIN "liked_movies" ON "movies"."id" = "liked_movies"."movie_id" WHERE "liked_movies"."user_id" = ?[0m  [["user_id", 50]]
+  ↳ lib/recommendation.rb:6
+  [1m[36mMovie Load (0.2ms)[0m  [1m[34mSELECT "movies".* FROM "movies" INNER JOIN "liked_movies" ON "movies"."id" = "liked_movies"."movie_id" WHERE "liked_movies"."user_id" = ?[0m  [["user_id", 51]]
+  ↳ lib/recommendation.rb:6
+  [1m[36mMovie Load (0.1ms)[0m  [1m[34mSELECT "movies".* FROM "movies" INNER JOIN "liked_movies" ON "movies"."id" = "liked_movies"."movie_id" WHERE "liked_movies"."user_id" = ?[0m  [["user_id", 52]]
+  ↳ lib/recommendation.rb:6
+  [1m[36mMovie Load (0.1ms)[0m  [1m[34mSELECT "movies".* FROM "movies" INNER JOIN "liked_movies" ON "movies"."id" = "liked_movies"."movie_id" WHERE "liked_movies"."user_id" = ?[0m  [["user_id", 53]]
+  ↳ lib/recommendation.rb:6
+  [1m[36mMovie Load (0.1ms)[0m  [1m[34mSELECT "movies".* FROM "movies" INNER JOIN "liked_movies" ON "movies"."id" = "liked_movies"."movie_id" WHERE "liked_movies"."user_id" = ?[0m  [["user_id", 54]]
+  ↳ lib/recommendation.rb:6
+  [1m[36mMovie Load (0.1ms)[0m  [1m[34mSELECT "movies".* FROM "movies" INNER JOIN "liked_movies" ON "movies"."id" = "liked_movies"."movie_id" WHERE "liked_movies"."user_id" = ?[0m  [["user_id", 55]]
+  ↳ lib/recommendation.rb:6
+  [1m[36mMovie Load (0.1ms)[0m  [1m[34mSELECT "movies".* FROM "movies" INNER JOIN "liked_movies" ON "movies"."id" = "liked_movies"."movie_id" WHERE "liked_movies"."user_id" = ?[0m  [["user_id", 56]]
+  ↳ lib/recommendation.rb:6
+  [1m[36mMovie Load (0.1ms)[0m  [1m[34mSELECT "movies".* FROM "movies" INNER JOIN "liked_movies" ON "movies"."id" = "liked_movies"."movie_id" WHERE "liked_movies"."user_id" = ?[0m  [["user_id", 57]]
+  ↳ lib/recommendation.rb:6
+  [1m[36mMovie Load (0.1ms)[0m  [1m[34mSELECT "movies".* FROM "movies" INNER JOIN "liked_movies" ON "movies"."id" = "liked_movies"."movie_id" WHERE "liked_movies"."user_id" = ?[0m  [["user_id", 58]]
+  ↳ lib/recommendation.rb:6
+  [1m[36mMovie Load (0.1ms)[0m  [1m[34mSELECT "movies".* FROM "movies" INNER JOIN "liked_movies" ON "movies"."id" = "liked_movies"."movie_id" WHERE "liked_movies"."user_id" = ?[0m  [["user_id", 59]]
+  ↳ lib/recommendation.rb:6
+  [1m[36mMovie Load (0.1ms)[0m  [1m[34mSELECT "movies".* FROM "movies" INNER JOIN "liked_movies" ON "movies"."id" = "liked_movies"."movie_id" WHERE "liked_movies"."user_id" = ?[0m  [["user_id", 60]]
+  ↳ lib/recommendation.rb:6
+  Rendered users/show.html.erb within layouts/application (56.1ms)
+Completed 200 OK in 78ms (Views: 67.6ms | ActiveRecord: 6.2ms)
+
+
+Started GET "/users" for 127.0.0.1 at 2019-02-21 15:07:32 +0530
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/apple/.rbenv/versions/2.6.1/lib/ruby/gems/2.6.0/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:2
+  Rendered users/index.html.erb within layouts/application (6.9ms)
+Completed 200 OK in 233ms (Views: 219.5ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/users/34" for 127.0.0.1 at 2019-02-21 15:07:39 +0530
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"34"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 34], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:8
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" != ?[0m  [["id", 34]]
+  ↳ lib/recommendation.rb:5
+  [1m[36mMovie Load (0.2ms)[0m  [1m[34mSELECT "movies".* FROM "movies" INNER JOIN "liked_movies" ON "movies"."id" = "liked_movies"."movie_id" WHERE "liked_movies"."user_id" = ?[0m  [["user_id", 31]]
+  ↳ lib/recommendation.rb:6
+  [1m[36mMovie Load (0.2ms)[0m  [1m[34mSELECT "movies".* FROM "movies" INNER JOIN "liked_movies" ON "movies"."id" = "liked_movies"."movie_id" WHERE "liked_movies"."user_id" = ?[0m  [["user_id", 34]]
+  ↳ lib/recommendation.rb:6
+  [1m[36mMovie Load (0.3ms)[0m  [1m[34mSELECT "movies".* FROM "movies" INNER JOIN "liked_movies" ON "movies"."id" = "liked_movies"."movie_id" WHERE "liked_movies"."user_id" = ?[0m  [["user_id", 32]]
+  ↳ lib/recommendation.rb:6
+  [1m[36mMovie Load (0.1ms)[0m  [1m[34mSELECT "movies".* FROM "movies" INNER JOIN "liked_movies" ON "movies"."id" = "liked_movies"."movie_id" WHERE "liked_movies"."user_id" = ?[0m  [["user_id", 33]]
+  ↳ lib/recommendation.rb:6
+  [1m[36mMovie Load (0.1ms)[0m  [1m[34mSELECT "movies".* FROM "movies" INNER JOIN "liked_movies" ON "movies"."id" = "liked_movies"."movie_id" WHERE "liked_movies"."user_id" = ?[0m  [["user_id", 35]]
+  ↳ lib/recommendation.rb:6
+  [1m[36mMovie Load (0.1ms)[0m  [1m[34mSELECT "movies".* FROM "movies" INNER JOIN "liked_movies" ON "movies"."id" = "liked_movies"."movie_id" WHERE "liked_movies"."user_id" = ?[0m  [["user_id", 36]]
+  ↳ lib/recommendation.rb:6
+  [1m[36mMovie Load (0.1ms)[0m  [1m[34mSELECT "movies".* FROM "movies" INNER JOIN "liked_movies" ON "movies"."id" = "liked_movies"."movie_id" WHERE "liked_movies"."user_id" = ?[0m  [["user_id", 37]]
+  ↳ lib/recommendation.rb:6
+  [1m[36mMovie Load (0.1ms)[0m  [1m[34mSELECT "movies".* FROM "movies" INNER JOIN "liked_movies" ON "movies"."id" = "liked_movies"."movie_id" WHERE "liked_movies"."user_id" = ?[0m  [["user_id", 38]]
+  ↳ lib/recommendation.rb:6
+  [1m[36mMovie Load (0.1ms)[0m  [1m[34mSELECT "movies".* FROM "movies" INNER JOIN "liked_movies" ON "movies"."id" = "liked_movies"."movie_id" WHERE "liked_movies"."user_id" = ?[0m  [["user_id", 39]]
+  ↳ lib/recommendation.rb:6
+  [1m[36mMovie Load (0.1ms)[0m  [1m[34mSELECT "movies".* FROM "movies" INNER JOIN "liked_movies" ON "movies"."id" = "liked_movies"."movie_id" WHERE "liked_movies"."user_id" = ?[0m  [["user_id", 40]]
+  ↳ lib/recommendation.rb:6
+  [1m[36mMovie Load (0.1ms)[0m  [1m[34mSELECT "movies".* FROM "movies" INNER JOIN "liked_movies" ON "movies"."id" = "liked_movies"."movie_id" WHERE "liked_movies"."user_id" = ?[0m  [["user_id", 41]]
+  ↳ lib/recommendation.rb:6
+  [1m[36mMovie Load (0.1ms)[0m  [1m[34mSELECT "movies".* FROM "movies" INNER JOIN "liked_movies" ON "movies"."id" = "liked_movies"."movie_id" WHERE "liked_movies"."user_id" = ?[0m  [["user_id", 42]]
+  ↳ lib/recommendation.rb:6
+  [1m[36mMovie Load (0.1ms)[0m  [1m[34mSELECT "movies".* FROM "movies" INNER JOIN "liked_movies" ON "movies"."id" = "liked_movies"."movie_id" WHERE "liked_movies"."user_id" = ?[0m  [["user_id", 43]]
+  ↳ lib/recommendation.rb:6
+  [1m[36mMovie Load (0.1ms)[0m  [1m[34mSELECT "movies".* FROM "movies" INNER JOIN "liked_movies" ON "movies"."id" = "liked_movies"."movie_id" WHERE "liked_movies"."user_id" = ?[0m  [["user_id", 44]]
+  ↳ lib/recommendation.rb:6
+  [1m[36mMovie Load (0.1ms)[0m  [1m[34mSELECT "movies".* FROM "movies" INNER JOIN "liked_movies" ON "movies"."id" = "liked_movies"."movie_id" WHERE "liked_movies"."user_id" = ?[0m  [["user_id", 45]]
+  ↳ lib/recommendation.rb:6
+  [1m[36mMovie Load (0.1ms)[0m  [1m[34mSELECT "movies".* FROM "movies" INNER JOIN "liked_movies" ON "movies"."id" = "liked_movies"."movie_id" WHERE "liked_movies"."user_id" = ?[0m  [["user_id", 46]]
+  ↳ lib/recommendation.rb:6
+  [1m[36mMovie Load (0.1ms)[0m  [1m[34mSELECT "movies".* FROM "movies" INNER JOIN "liked_movies" ON "movies"."id" = "liked_movies"."movie_id" WHERE "liked_movies"."user_id" = ?[0m  [["user_id", 47]]
+  ↳ lib/recommendation.rb:6
+  [1m[36mMovie Load (0.1ms)[0m  [1m[34mSELECT "movies".* FROM "movies" INNER JOIN "liked_movies" ON "movies"."id" = "liked_movies"."movie_id" WHERE "liked_movies"."user_id" = ?[0m  [["user_id", 48]]
+  ↳ lib/recommendation.rb:6
+  [1m[36mMovie Load (0.1ms)[0m  [1m[34mSELECT "movies".* FROM "movies" INNER JOIN "liked_movies" ON "movies"."id" = "liked_movies"."movie_id" WHERE "liked_movies"."user_id" = ?[0m  [["user_id", 49]]
+  ↳ lib/recommendation.rb:6
+  [1m[36mMovie Load (0.1ms)[0m  [1m[34mSELECT "movies".* FROM "movies" INNER JOIN "liked_movies" ON "movies"."id" = "liked_movies"."movie_id" WHERE "liked_movies"."user_id" = ?[0m  [["user_id", 50]]
+  ↳ lib/recommendation.rb:6
+  [1m[36mMovie Load (0.1ms)[0m  [1m[34mSELECT "movies".* FROM "movies" INNER JOIN "liked_movies" ON "movies"."id" = "liked_movies"."movie_id" WHERE "liked_movies"."user_id" = ?[0m  [["user_id", 51]]
+  ↳ lib/recommendation.rb:6
+  [1m[36mMovie Load (0.1ms)[0m  [1m[34mSELECT "movies".* FROM "movies" INNER JOIN "liked_movies" ON "movies"."id" = "liked_movies"."movie_id" WHERE "liked_movies"."user_id" = ?[0m  [["user_id", 52]]
+  ↳ lib/recommendation.rb:6
+  [1m[36mMovie Load (0.1ms)[0m  [1m[34mSELECT "movies".* FROM "movies" INNER JOIN "liked_movies" ON "movies"."id" = "liked_movies"."movie_id" WHERE "liked_movies"."user_id" = ?[0m  [["user_id", 53]]
+  ↳ lib/recommendation.rb:6
+  [1m[36mMovie Load (0.1ms)[0m  [1m[34mSELECT "movies".* FROM "movies" INNER JOIN "liked_movies" ON "movies"."id" = "liked_movies"."movie_id" WHERE "liked_movies"."user_id" = ?[0m  [["user_id", 54]]
+  ↳ lib/recommendation.rb:6
+  [1m[36mMovie Load (0.1ms)[0m  [1m[34mSELECT "movies".* FROM "movies" INNER JOIN "liked_movies" ON "movies"."id" = "liked_movies"."movie_id" WHERE "liked_movies"."user_id" = ?[0m  [["user_id", 55]]
+  ↳ lib/recommendation.rb:6
+  [1m[36mMovie Load (0.1ms)[0m  [1m[34mSELECT "movies".* FROM "movies" INNER JOIN "liked_movies" ON "movies"."id" = "liked_movies"."movie_id" WHERE "liked_movies"."user_id" = ?[0m  [["user_id", 56]]
+  ↳ lib/recommendation.rb:6
+  [1m[36mMovie Load (0.1ms)[0m  [1m[34mSELECT "movies".* FROM "movies" INNER JOIN "liked_movies" ON "movies"."id" = "liked_movies"."movie_id" WHERE "liked_movies"."user_id" = ?[0m  [["user_id", 57]]
+  ↳ lib/recommendation.rb:6
+  [1m[36mMovie Load (0.1ms)[0m  [1m[34mSELECT "movies".* FROM "movies" INNER JOIN "liked_movies" ON "movies"."id" = "liked_movies"."movie_id" WHERE "liked_movies"."user_id" = ?[0m  [["user_id", 58]]
+  ↳ lib/recommendation.rb:6
+  [1m[36mMovie Load (0.1ms)[0m  [1m[34mSELECT "movies".* FROM "movies" INNER JOIN "liked_movies" ON "movies"."id" = "liked_movies"."movie_id" WHERE "liked_movies"."user_id" = ?[0m  [["user_id", 59]]
+  ↳ lib/recommendation.rb:6
+  [1m[36mMovie Load (0.1ms)[0m  [1m[34mSELECT "movies".* FROM "movies" INNER JOIN "liked_movies" ON "movies"."id" = "liked_movies"."movie_id" WHERE "liked_movies"."user_id" = ?[0m  [["user_id", 60]]
+  ↳ lib/recommendation.rb:6
+  Rendered users/show.html.erb within layouts/application (57.6ms)
+Completed 200 OK in 81ms (Views: 72.0ms | ActiveRecord: 4.9ms)
+
+
+Started GET "/users/40" for 127.0.0.1 at 2019-02-21 15:07:42 +0530
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"40"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 40], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:8
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" != ?[0m  [["id", 40]]
+  ↳ lib/recommendation.rb:5
+  [1m[36mMovie Load (0.8ms)[0m  [1m[34mSELECT "movies".* FROM "movies" INNER JOIN "liked_movies" ON "movies"."id" = "liked_movies"."movie_id" WHERE "liked_movies"."user_id" = ?[0m  [["user_id", 31]]
+  ↳ lib/recommendation.rb:6
+  [1m[36mMovie Load (0.2ms)[0m  [1m[34mSELECT "movies".* FROM "movies" INNER JOIN "liked_movies" ON "movies"."id" = "liked_movies"."movie_id" WHERE "liked_movies"."user_id" = ?[0m  [["user_id", 40]]
+  ↳ lib/recommendation.rb:6
+  [1m[36mMovie Load (0.3ms)[0m  [1m[34mSELECT "movies".* FROM "movies" INNER JOIN "liked_movies" ON "movies"."id" = "liked_movies"."movie_id" WHERE "liked_movies"."user_id" = ?[0m  [["user_id", 32]]
+  ↳ lib/recommendation.rb:6
+  [1m[36mMovie Load (0.2ms)[0m  [1m[34mSELECT "movies".* FROM "movies" INNER JOIN "liked_movies" ON "movies"."id" = "liked_movies"."movie_id" WHERE "liked_movies"."user_id" = ?[0m  [["user_id", 33]]
+  ↳ lib/recommendation.rb:6
+  [1m[36mMovie Load (0.9ms)[0m  [1m[34mSELECT "movies".* FROM "movies" INNER JOIN "liked_movies" ON "movies"."id" = "liked_movies"."movie_id" WHERE "liked_movies"."user_id" = ?[0m  [["user_id", 34]]
+  ↳ lib/recommendation.rb:6
+  [1m[36mMovie Load (0.2ms)[0m  [1m[34mSELECT "movies".* FROM "movies" INNER JOIN "liked_movies" ON "movies"."id" = "liked_movies"."movie_id" WHERE "liked_movies"."user_id" = ?[0m  [["user_id", 35]]
+  ↳ lib/recommendation.rb:6
+  [1m[36mMovie Load (0.2ms)[0m  [1m[34mSELECT "movies".* FROM "movies" INNER JOIN "liked_movies" ON "movies"."id" = "liked_movies"."movie_id" WHERE "liked_movies"."user_id" = ?[0m  [["user_id", 36]]
+  ↳ lib/recommendation.rb:6
+  [1m[36mMovie Load (0.2ms)[0m  [1m[34mSELECT "movies".* FROM "movies" INNER JOIN "liked_movies" ON "movies"."id" = "liked_movies"."movie_id" WHERE "liked_movies"."user_id" = ?[0m  [["user_id", 37]]
+  ↳ lib/recommendation.rb:6
+  [1m[36mMovie Load (0.2ms)[0m  [1m[34mSELECT "movies".* FROM "movies" INNER JOIN "liked_movies" ON "movies"."id" = "liked_movies"."movie_id" WHERE "liked_movies"."user_id" = ?[0m  [["user_id", 38]]
+  ↳ lib/recommendation.rb:6
+  [1m[36mMovie Load (0.1ms)[0m  [1m[34mSELECT "movies".* FROM "movies" INNER JOIN "liked_movies" ON "movies"."id" = "liked_movies"."movie_id" WHERE "liked_movies"."user_id" = ?[0m  [["user_id", 39]]
+  ↳ lib/recommendation.rb:6
+  [1m[36mMovie Load (1.1ms)[0m  [1m[34mSELECT "movies".* FROM "movies" INNER JOIN "liked_movies" ON "movies"."id" = "liked_movies"."movie_id" WHERE "liked_movies"."user_id" = ?[0m  [["user_id", 41]]
+  ↳ lib/recommendation.rb:6
+  [1m[36mMovie Load (0.2ms)[0m  [1m[34mSELECT "movies".* FROM "movies" INNER JOIN "liked_movies" ON "movies"."id" = "liked_movies"."movie_id" WHERE "liked_movies"."user_id" = ?[0m  [["user_id", 42]]
+  ↳ lib/recommendation.rb:6
+  [1m[36mMovie Load (0.1ms)[0m  [1m[34mSELECT "movies".* FROM "movies" INNER JOIN "liked_movies" ON "movies"."id" = "liked_movies"."movie_id" WHERE "liked_movies"."user_id" = ?[0m  [["user_id", 43]]
+  ↳ lib/recommendation.rb:6
+  [1m[36mMovie Load (0.1ms)[0m  [1m[34mSELECT "movies".* FROM "movies" INNER JOIN "liked_movies" ON "movies"."id" = "liked_movies"."movie_id" WHERE "liked_movies"."user_id" = ?[0m  [["user_id", 44]]
+  ↳ lib/recommendation.rb:6
+  [1m[36mMovie Load (0.1ms)[0m  [1m[34mSELECT "movies".* FROM "movies" INNER JOIN "liked_movies" ON "movies"."id" = "liked_movies"."movie_id" WHERE "liked_movies"."user_id" = ?[0m  [["user_id", 45]]
+  ↳ lib/recommendation.rb:6
+  [1m[36mMovie Load (0.1ms)[0m  [1m[34mSELECT "movies".* FROM "movies" INNER JOIN "liked_movies" ON "movies"."id" = "liked_movies"."movie_id" WHERE "liked_movies"."user_id" = ?[0m  [["user_id", 46]]
+  ↳ lib/recommendation.rb:6
+  [1m[36mMovie Load (0.1ms)[0m  [1m[34mSELECT "movies".* FROM "movies" INNER JOIN "liked_movies" ON "movies"."id" = "liked_movies"."movie_id" WHERE "liked_movies"."user_id" = ?[0m  [["user_id", 47]]
+  ↳ lib/recommendation.rb:6
+  [1m[36mMovie Load (0.1ms)[0m  [1m[34mSELECT "movies".* FROM "movies" INNER JOIN "liked_movies" ON "movies"."id" = "liked_movies"."movie_id" WHERE "liked_movies"."user_id" = ?[0m  [["user_id", 48]]
+  ↳ lib/recommendation.rb:6
+  [1m[36mMovie Load (0.1ms)[0m  [1m[34mSELECT "movies".* FROM "movies" INNER JOIN "liked_movies" ON "movies"."id" = "liked_movies"."movie_id" WHERE "liked_movies"."user_id" = ?[0m  [["user_id", 49]]
+  ↳ lib/recommendation.rb:6
+  [1m[36mMovie Load (0.1ms)[0m  [1m[34mSELECT "movies".* FROM "movies" INNER JOIN "liked_movies" ON "movies"."id" = "liked_movies"."movie_id" WHERE "liked_movies"."user_id" = ?[0m  [["user_id", 50]]
+  ↳ lib/recommendation.rb:6
+  [1m[36mMovie Load (0.1ms)[0m  [1m[34mSELECT "movies".* FROM "movies" INNER JOIN "liked_movies" ON "movies"."id" = "liked_movies"."movie_id" WHERE "liked_movies"."user_id" = ?[0m  [["user_id", 51]]
+  ↳ lib/recommendation.rb:6
+  [1m[36mMovie Load (0.1ms)[0m  [1m[34mSELECT "movies".* FROM "movies" INNER JOIN "liked_movies" ON "movies"."id" = "liked_movies"."movie_id" WHERE "liked_movies"."user_id" = ?[0m  [["user_id", 52]]
+  ↳ lib/recommendation.rb:6
+  [1m[36mMovie Load (0.1ms)[0m  [1m[34mSELECT "movies".* FROM "movies" INNER JOIN "liked_movies" ON "movies"."id" = "liked_movies"."movie_id" WHERE "liked_movies"."user_id" = ?[0m  [["user_id", 53]]
+  ↳ lib/recommendation.rb:6
+  [1m[36mMovie Load (0.1ms)[0m  [1m[34mSELECT "movies".* FROM "movies" INNER JOIN "liked_movies" ON "movies"."id" = "liked_movies"."movie_id" WHERE "liked_movies"."user_id" = ?[0m  [["user_id", 54]]
+  ↳ lib/recommendation.rb:6
+  [1m[36mMovie Load (0.1ms)[0m  [1m[34mSELECT "movies".* FROM "movies" INNER JOIN "liked_movies" ON "movies"."id" = "liked_movies"."movie_id" WHERE "liked_movies"."user_id" = ?[0m  [["user_id", 55]]
+  ↳ lib/recommendation.rb:6
+  [1m[36mMovie Load (0.2ms)[0m  [1m[34mSELECT "movies".* FROM "movies" INNER JOIN "liked_movies" ON "movies"."id" = "liked_movies"."movie_id" WHERE "liked_movies"."user_id" = ?[0m  [["user_id", 56]]
+  ↳ lib/recommendation.rb:6
+  [1m[36mMovie Load (0.2ms)[0m  [1m[34mSELECT "movies".* FROM "movies" INNER JOIN "liked_movies" ON "movies"."id" = "liked_movies"."movie_id" WHERE "liked_movies"."user_id" = ?[0m  [["user_id", 57]]
+  ↳ lib/recommendation.rb:6
+  [1m[36mMovie Load (0.2ms)[0m  [1m[34mSELECT "movies".* FROM "movies" INNER JOIN "liked_movies" ON "movies"."id" = "liked_movies"."movie_id" WHERE "liked_movies"."user_id" = ?[0m  [["user_id", 58]]
+  ↳ lib/recommendation.rb:6
+  [1m[36mMovie Load (0.4ms)[0m  [1m[34mSELECT "movies".* FROM "movies" INNER JOIN "liked_movies" ON "movies"."id" = "liked_movies"."movie_id" WHERE "liked_movies"."user_id" = ?[0m  [["user_id", 59]]
+  ↳ lib/recommendation.rb:6
+  [1m[36mMovie Load (0.1ms)[0m  [1m[34mSELECT "movies".* FROM "movies" INNER JOIN "liked_movies" ON "movies"."id" = "liked_movies"."movie_id" WHERE "liked_movies"."user_id" = ?[0m  [["user_id", 60]]
+  ↳ lib/recommendation.rb:6
+  Rendered users/show.html.erb within layouts/application (105.6ms)
+Completed 200 OK in 127ms (Views: 114.9ms | ActiveRecord: 7.4ms)
+
+
